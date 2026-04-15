@@ -1,0 +1,17 @@
+{
+  "version": "1.0",
+  "created_at": "2026-04-14T00:00:00Z",
+  "business_name": "Dixon Painting Co.",
+  "site_type": "service",
+  "phases": {
+    "discovery": "complete",
+    "planner": "complete",
+    "designer": "complete",
+    "builder": "pending",
+    "reviewer": "pending",
+    "deploy": "skipped"
+  },
+  "deploy_enabled": false,
+  "live_url": null,
+  "last_update": null
+}

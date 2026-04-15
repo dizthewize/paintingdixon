@@ -1,0 +1,711 @@
+{
+  "homepageSectionOrder": [
+    { "position": 1, "section": "Hero", "notes": "Two-column desktop: left=headline+trust line+primary CTA; right=LeadCaptureForm floating card (40% width). Mobile: headline, trust line, primary CTA button, then form below." },
+    { "position": 2, "section": "TrustSignalsBar", "notes": "Immediately below Hero. Visible above fold on large screens. Five trust badges in a horizontal strip." },
+    { "position": 3, "section": "ServicesGrid", "notes": "Four service cards. Each card links to its service subpage. Secondary CTA 'See All Services' → /services at bottom." },
+    { "position": 4, "section": "OfferBand", "notes": "Free Color Consultation + Estimate offer. Accent background. Primary CTA button + phone number." },
+    { "position": 5, "section": "TestimonialsSection", "notes": "Star-rated customer quotes. No CTA — pure trust content." },
+    { "position": 6, "section": "ServiceAreaSection", "notes": "City grid with 'We serve Dixon + 20 miles' message. Link to /service-areas." },
+    { "position": 7, "section": "FAQSection", "notes": "6-question accordion. No CTA inline; bottom of section has secondary phone link." },
+    { "position": 8, "section": "FinalCTABand", "notes": "Full-width band below FAQ. Headline + repeat LeadCaptureForm. This is the second form instance on the homepage." }
+  ],
+
+  "formPlacements": [
+    {
+      "id": "hero-form",
+      "page": "/",
+      "section": "Hero",
+      "desktopLayout": "right-column sticky card — 40% width, rounded shadow card, position: sticky top-24",
+      "mobileLayout": "below hero CTA button, full-width, no sticky behavior",
+      "formName": "estimate-request",
+      "headline": "Get My Free Estimate + Color Consult",
+      "subline": "No pressure. We respond within 24 hours."
+    },
+    {
+      "id": "final-cta-form",
+      "page": "/",
+      "section": "FinalCTABand",
+      "desktopLayout": "full-width centered, max-w-xl mx-auto",
+      "mobileLayout": "full-width stack",
+      "formName": "estimate-request",
+      "headline": "Ready to Get Started?",
+      "subline": "Free estimate. Free color consultation. No obligation."
+    },
+    {
+      "id": "contact-form",
+      "page": "/contact",
+      "section": "Primary content",
+      "desktopLayout": "two-column: left=form (60%), right=phone+NAP+hours+trust bullets (40%)",
+      "mobileLayout": "full-width stack — phone number block first, then form",
+      "formName": "estimate-request",
+      "headline": "Send My Estimate Request",
+      "subline": "Or call (916) 612-2126 — we pick up."
+    }
+  ],
+
+  "ctaByPage": {
+    "/": [
+      {
+        "position": "Hero — left column, below subheadline",
+        "type": "primary",
+        "text": "Get My Free Estimate + Color Consult",
+        "href": "#estimate-form",
+        "style": "Large filled button — accent color (bg-accent text-white px-8 py-4 rounded-lg text-lg font-semibold shadow-md hover:bg-accent-dark transition)",
+        "notes": "Scrolls to hero form on mobile; on desktop the form is already visible in the right column"
+      },
+      {
+        "position": "Hero — left column, below primary CTA",
+        "type": "phone-only",
+        "text": "Call Now — (916) 612-2126",
+        "href": "tel:+19166122126",
+        "style": "Inline text link with phone icon — text-accent underline font-medium",
+        "notes": "Secondary urgency option"
+      },
+      {
+        "position": "ServicesGrid — bottom of section",
+        "type": "secondary",
+        "text": "See All Services",
+        "href": "/services",
+        "style": "Outlined button — border-accent text-accent px-6 py-3 rounded-lg hover:bg-accent hover:text-white transition",
+        "notes": "Supports exploration; not a conversion CTA"
+      },
+      {
+        "position": "OfferBand — center",
+        "type": "primary",
+        "text": "Get My Free Estimate + Color Consult",
+        "href": "/contact",
+        "style": "Large filled button — white text on accent bg, px-8 py-4 rounded-lg font-semibold shadow",
+        "notes": "Offer band has accent/dark background; button should contrast"
+      },
+      {
+        "position": "OfferBand — below primary button",
+        "type": "phone-only",
+        "text": "(916) 612-2126",
+        "href": "tel:+19166122126",
+        "style": "Plain text link, white color, font-medium",
+        "notes": "Inline phone fallback"
+      },
+      {
+        "position": "ServiceAreaSection — bottom",
+        "type": "secondary",
+        "text": "See All Service Areas",
+        "href": "/service-areas",
+        "style": "Outlined button — border-neutral text-neutral px-6 py-3 rounded-lg",
+        "notes": "Navigation support"
+      },
+      {
+        "position": "FinalCTABand — form submit button",
+        "type": "primary",
+        "text": "Send My Estimate Request",
+        "href": "form-submit",
+        "style": "Full-width button inside form — bg-accent text-white py-4 rounded-lg font-semibold text-lg",
+        "notes": "Form submit; full-width on mobile"
+      }
+    ],
+
+    "/services": [
+      {
+        "position": "Hero — below subheadline",
+        "type": "primary",
+        "text": "Get a Free Estimate",
+        "href": "/contact",
+        "style": "Large filled button — accent, px-8 py-4 rounded-lg font-semibold shadow-md"
+      },
+      {
+        "position": "Hero — below primary CTA",
+        "type": "phone-only",
+        "text": "Call (916) 612-2126 — We Pick Up",
+        "href": "tel:+19166122126",
+        "style": "Inline text link with phone icon — text-accent underline"
+      },
+      {
+        "position": "Each service card — bottom",
+        "type": "secondary",
+        "text": "Learn More",
+        "href": "/services/[service-slug]",
+        "style": "Text link with right arrow — text-accent hover:underline font-medium",
+        "notes": "One per card: interior, exterior, cabinet, commercial"
+      },
+      {
+        "position": "Page bottom CTA band",
+        "type": "primary",
+        "text": "Get a Free Painting Estimate",
+        "href": "/contact",
+        "style": "Large filled button — accent bg, centered"
+      },
+      {
+        "position": "Page bottom CTA band — secondary",
+        "type": "phone-only",
+        "text": "(916) 612-2126",
+        "href": "tel:+19166122126",
+        "style": "Inline phone link below button — text-accent"
+      }
+    ],
+
+    "/services/interior-painting": [
+      {
+        "position": "Hero — below subheadline",
+        "type": "primary",
+        "text": "Get a Free Interior Painting Estimate",
+        "href": "/contact",
+        "style": "Large filled button — accent, px-8 py-4 rounded-lg font-semibold shadow-md"
+      },
+      {
+        "position": "Hero — below primary CTA",
+        "type": "phone-only",
+        "text": "Call (916) 612-2126",
+        "href": "tel:+19166122126",
+        "style": "Inline link with phone icon — text-accent"
+      },
+      {
+        "position": "Mid-page offer band",
+        "type": "primary",
+        "text": "Get My Free Interior Estimate",
+        "href": "/contact",
+        "style": "Filled button — accent bg, centered in accent band"
+      },
+      {
+        "position": "Mid-page offer band — phone",
+        "type": "phone-only",
+        "text": "(916) 612-2126",
+        "href": "tel:+19166122126",
+        "style": "Inline phone text — white on dark band"
+      },
+      {
+        "position": "Page bottom — full CTA section with form",
+        "type": "primary",
+        "text": "Send My Estimate Request",
+        "href": "form-submit",
+        "style": "Full-width form submit button — accent bg"
+      }
+    ],
+
+    "/services/exterior-painting": [
+      {
+        "position": "Hero — below subheadline",
+        "type": "primary",
+        "text": "Get a Free Exterior Painting Estimate",
+        "href": "/contact",
+        "style": "Large filled button — accent, px-8 py-4 rounded-lg font-semibold shadow-md"
+      },
+      {
+        "position": "Hero — below primary CTA",
+        "type": "phone-only",
+        "text": "Call (916) 612-2126",
+        "href": "tel:+19166122126",
+        "style": "Inline link with phone icon — text-accent"
+      },
+      {
+        "position": "Body — after project photos/examples block",
+        "type": "secondary",
+        "text": "See Our Exterior Work",
+        "href": "/gallery",
+        "style": "Outlined button — border-accent text-accent px-6 py-3 rounded-lg",
+        "notes": "Drives gallery exploration per internal linking plan"
+      },
+      {
+        "position": "Mid-page offer band",
+        "type": "primary",
+        "text": "Get My Free Exterior Estimate",
+        "href": "/contact",
+        "style": "Filled button — accent bg, centered"
+      },
+      {
+        "position": "Page bottom — full CTA section with form",
+        "type": "primary",
+        "text": "Send My Estimate Request",
+        "href": "form-submit",
+        "style": "Full-width form submit button — accent bg"
+      }
+    ],
+
+    "/services/cabinet-painting": [
+      {
+        "position": "Hero — below subheadline",
+        "type": "primary",
+        "text": "Get a Free Cabinet Painting Quote",
+        "href": "/contact",
+        "style": "Large filled button — accent, px-8 py-4 rounded-lg font-semibold shadow-md"
+      },
+      {
+        "position": "Hero — below primary CTA",
+        "type": "phone-only",
+        "text": "Call (916) 612-2126 — Book Your Spot",
+        "href": "tel:+19166122126",
+        "style": "Inline link with phone icon — text-accent"
+      },
+      {
+        "position": "Mid-page offer band",
+        "type": "primary",
+        "text": "Get My Free Cabinet Quote",
+        "href": "/contact",
+        "style": "Filled button — accent bg, centered"
+      },
+      {
+        "position": "Page bottom — full CTA section with form",
+        "type": "primary",
+        "text": "Send My Estimate Request",
+        "href": "form-submit",
+        "style": "Full-width form submit button — accent bg"
+      }
+    ],
+
+    "/services/commercial-painting": [
+      {
+        "position": "Hero — below subheadline",
+        "type": "primary",
+        "text": "Request a Commercial Painting Estimate",
+        "href": "/contact",
+        "style": "Large filled button — accent, px-8 py-4 rounded-lg font-semibold shadow-md"
+      },
+      {
+        "position": "Hero — below primary CTA",
+        "type": "phone-only",
+        "text": "Call (916) 612-2126",
+        "href": "tel:+19166122126",
+        "style": "Inline link with phone icon — text-accent"
+      },
+      {
+        "position": "Mid-page offer band",
+        "type": "primary",
+        "text": "Get My Free Commercial Estimate",
+        "href": "/contact",
+        "style": "Filled button — accent bg, centered"
+      },
+      {
+        "position": "Page bottom — full CTA section with form",
+        "type": "primary",
+        "text": "Send My Estimate Request",
+        "href": "form-submit",
+        "style": "Full-width form submit button — accent bg"
+      }
+    ],
+
+    "/gallery": [
+      {
+        "position": "Top of gallery — above first photo row",
+        "type": "primary",
+        "text": "Like What You See? Get a Free Estimate",
+        "href": "/contact",
+        "style": "Filled button — accent, px-8 py-4 rounded-lg font-semibold, centered",
+        "notes": "Pair with subline: 'Ready to transform your home?'"
+      },
+      {
+        "position": "Top of gallery — secondary",
+        "type": "phone-only",
+        "text": "Or call (916) 612-2126",
+        "href": "tel:+19166122126",
+        "style": "Inline text link — text-accent, below primary button"
+      },
+      {
+        "position": "Page bottom — full CTA section with form",
+        "type": "primary",
+        "text": "Send My Estimate Request",
+        "href": "form-submit",
+        "style": "Full-width form submit button — accent bg"
+      }
+    ],
+
+    "/service-areas": [
+      {
+        "position": "Hero — below subheadline",
+        "type": "primary",
+        "text": "Get a Free Estimate in Your Area",
+        "href": "/contact",
+        "style": "Large filled button — accent, px-8 py-4 rounded-lg font-semibold shadow-md"
+      },
+      {
+        "position": "Hero — below primary CTA",
+        "type": "phone-only",
+        "text": "Call (916) 612-2126",
+        "href": "tel:+19166122126",
+        "style": "Inline link — text-accent"
+      },
+      {
+        "position": "Each city card — bottom",
+        "type": "secondary",
+        "text": "Painting in [City]",
+        "href": "/service-areas/[city-slug]",
+        "style": "Text link — text-accent hover:underline",
+        "notes": "Dynamically insert city name"
+      },
+      {
+        "position": "Page bottom CTA band",
+        "type": "primary",
+        "text": "Get a Free Estimate",
+        "href": "/contact",
+        "style": "Filled button — accent bg, centered"
+      }
+    ],
+
+    "/service-areas/vacaville": [
+      {
+        "position": "Hero — below subheadline",
+        "type": "primary",
+        "text": "Get a Free Estimate in Vacaville",
+        "href": "/contact",
+        "style": "Large filled button — accent, px-8 py-4 rounded-lg font-semibold shadow-md"
+      },
+      {
+        "position": "Hero — secondary",
+        "type": "phone-only",
+        "text": "Call (916) 612-2126",
+        "href": "tel:+19166122126",
+        "style": "Inline link — text-accent"
+      },
+      {
+        "position": "Body — after services list",
+        "type": "secondary",
+        "text": "View Our Full Painting Services",
+        "href": "/services",
+        "style": "Outlined button — border-accent text-accent px-6 py-3 rounded-lg",
+        "notes": "Per internal linking plan"
+      },
+      {
+        "position": "Page bottom CTA section with form",
+        "type": "primary",
+        "text": "Send My Estimate Request",
+        "href": "form-submit",
+        "style": "Full-width form submit button — accent bg"
+      }
+    ],
+
+    "/service-areas/woodland": [
+      {
+        "position": "Hero — below subheadline",
+        "type": "primary",
+        "text": "Get a Free Estimate in Woodland",
+        "href": "/contact",
+        "style": "Large filled button — accent, px-8 py-4 rounded-lg font-semibold shadow-md"
+      },
+      {
+        "position": "Hero — secondary",
+        "type": "phone-only",
+        "text": "Call (916) 612-2126",
+        "href": "tel:+19166122126",
+        "style": "Inline link — text-accent"
+      },
+      {
+        "position": "Body — after services list",
+        "type": "secondary",
+        "text": "View Our Full Painting Services",
+        "href": "/services",
+        "style": "Outlined button — border-accent text-accent px-6 py-3 rounded-lg"
+      },
+      {
+        "position": "Page bottom CTA section with form",
+        "type": "primary",
+        "text": "Send My Estimate Request",
+        "href": "form-submit",
+        "style": "Full-width form submit button — accent bg"
+      }
+    ],
+
+    "/service-areas/fairfield": [
+      {
+        "position": "Hero — below subheadline",
+        "type": "primary",
+        "text": "Get a Free Estimate in Fairfield",
+        "href": "/contact",
+        "style": "Large filled button — accent, px-8 py-4 rounded-lg font-semibold shadow-md"
+      },
+      {
+        "position": "Hero — secondary",
+        "type": "phone-only",
+        "text": "Call (916) 612-2126",
+        "href": "tel:+19166122126",
+        "style": "Inline link — text-accent"
+      },
+      {
+        "position": "Body — after services list",
+        "type": "secondary",
+        "text": "View Our Full Painting Services",
+        "href": "/services",
+        "style": "Outlined button — border-accent text-accent px-6 py-3 rounded-lg"
+      },
+      {
+        "position": "Page bottom CTA section with form",
+        "type": "primary",
+        "text": "Send My Estimate Request",
+        "href": "form-submit",
+        "style": "Full-width form submit button — accent bg"
+      }
+    ],
+
+    "/service-areas/davis": [
+      {
+        "position": "Hero — below subheadline",
+        "type": "primary",
+        "text": "Get a Free Estimate in Davis",
+        "href": "/contact",
+        "style": "Large filled button — accent, px-8 py-4 rounded-lg font-semibold shadow-md"
+      },
+      {
+        "position": "Hero — secondary",
+        "type": "phone-only",
+        "text": "Call (916) 612-2126",
+        "href": "tel:+19166122126",
+        "style": "Inline link — text-accent"
+      },
+      {
+        "position": "Body — after services list",
+        "type": "secondary",
+        "text": "View Our Full Painting Services",
+        "href": "/services",
+        "style": "Outlined button — border-accent text-accent px-6 py-3 rounded-lg"
+      },
+      {
+        "position": "Page bottom CTA section with form",
+        "type": "primary",
+        "text": "Send My Estimate Request",
+        "href": "form-submit",
+        "style": "Full-width form submit button — accent bg"
+      }
+    ],
+
+    "/about": [
+      {
+        "position": "Page bottom CTA section with form",
+        "type": "primary",
+        "text": "Get Your Free Estimate",
+        "href": "/contact",
+        "style": "Large filled button — accent bg, centered"
+      },
+      {
+        "position": "Page bottom CTA — secondary",
+        "type": "phone-only",
+        "text": "Call (916) 612-2126 — Talk to a Real Person",
+        "href": "tel:+19166122126",
+        "style": "Inline text link — text-accent, below primary button"
+      },
+      {
+        "position": "Page bottom — form",
+        "type": "primary",
+        "text": "Send My Estimate Request",
+        "href": "form-submit",
+        "style": "Full-width form submit button — accent bg"
+      }
+    ],
+
+    "/contact": [
+      {
+        "position": "Page top — above form (hero line)",
+        "type": "phone-only",
+        "text": "Prefer to call? (916) 612-2126 — we pick up.",
+        "href": "tel:+19166122126",
+        "style": "Prominent inline link — text-accent font-semibold, displayed in right column alongside form on desktop"
+      },
+      {
+        "position": "Form submit button",
+        "type": "primary",
+        "text": "Send My Estimate Request",
+        "href": "form-submit",
+        "style": "Full-width button — bg-accent text-white py-4 rounded-lg font-semibold text-lg"
+      }
+    ]
+  },
+
+  "stickyHeader": {
+    "desktopDefaultState": {
+      "height": "80px",
+      "contents": ["Logo (left)", "Nav links (center)", "Phone number (top-right)", "Get Free Estimate button (far right)"],
+      "ctaButton": {
+        "text": "Get Free Estimate",
+        "href": "/contact",
+        "style": "bg-accent text-white px-5 py-2 rounded-lg font-semibold hover:bg-accent-dark transition"
+      },
+      "phoneDisplay": {
+        "text": "(916) 612-2126",
+        "href": "tel:+19166122126",
+        "style": "text-sm font-medium text-neutral-700"
+      }
+    },
+    "desktopScrolledState": {
+      "height": "60px",
+      "transition": "height 0.2s ease, box-shadow 0.2s ease",
+      "addShadow": true,
+      "ctaButton": "always visible",
+      "phoneDisplay": "always visible",
+      "triggerMechanism": "IntersectionObserver on a 1px sentinel div at top of page — when sentinel leaves viewport, header gets class 'header--scrolled'"
+    },
+    "mobileState": {
+      "contents": ["Logo (left)", "Hamburger menu icon (right)"],
+      "phoneVisible": false,
+      "ctaButtonVisible": false,
+      "notes": "MobileStickyCTABar handles conversion on mobile; header stays minimal"
+    }
+  },
+
+  "mobileStickyCTABar": {
+    "position": "fixed bottom-0 left-0 right-0 z-50",
+    "height": "56px",
+    "bodyPaddingBottom": "56px",
+    "fadeIn": {
+      "css": "opacity: 0; animation: fadeInBar 0.3s ease 0.5s forwards;",
+      "keyframes": "@keyframes fadeInBar { to { opacity: 1; } }"
+    },
+    "leftHalf": {
+      "text": "Call Now",
+      "icon": "phone icon (SVG inline)",
+      "href": "tel:+19166122126",
+      "style": "bg-accent text-white flex items-center justify-center gap-2 font-semibold w-1/2 h-full"
+    },
+    "rightHalf": {
+      "text": "Get Estimate",
+      "href": "/contact",
+      "style": "bg-neutral-800 text-white flex items-center justify-center font-semibold w-1/2 h-full"
+    },
+    "visibilityRule": "display on mobile only (hidden md:hidden or CSS media query max-width: 767px)"
+  },
+
+  "netlifyFormConfig": {
+    "formAttributes": {
+      "name": "estimate-request",
+      "method": "POST",
+      "data-netlify": "true",
+      "data-netlify-honeypot": "bot-field",
+      "id": "estimate-form"
+    },
+    "hiddenFields": [
+      { "type": "hidden", "name": "form-name", "value": "estimate-request" }
+    ],
+    "honeypot": {
+      "type": "text",
+      "name": "bot-field",
+      "class": "sr-only",
+      "tabindex": "-1",
+      "autocomplete": "off",
+      "aria-hidden": "true"
+    },
+    "fields": [
+      {
+        "id": "field-name",
+        "name": "name",
+        "type": "text",
+        "label": "Your Name",
+        "placeholder": "First and last name",
+        "required": true,
+        "autocomplete": "name"
+      },
+      {
+        "id": "field-phone",
+        "name": "phone",
+        "type": "tel",
+        "inputmode": "numeric",
+        "label": "Phone Number",
+        "placeholder": "(916) 000-0000",
+        "required": true,
+        "autocomplete": "tel"
+      },
+      {
+        "id": "field-email",
+        "name": "email",
+        "type": "email",
+        "label": "Email Address (optional)",
+        "placeholder": "you@example.com",
+        "required": false,
+        "autocomplete": "email"
+      },
+      {
+        "id": "field-service",
+        "name": "service",
+        "type": "select",
+        "label": "Service Needed",
+        "required": true,
+        "options": [
+          { "value": "", "label": "Select a service..." },
+          { "value": "interior-painting", "label": "Interior Painting" },
+          { "value": "exterior-painting", "label": "Exterior Painting" },
+          { "value": "cabinet-painting", "label": "Cabinet Painting" },
+          { "value": "commercial-painting", "label": "Commercial Painting" },
+          { "value": "not-sure", "label": "Not Sure Yet" }
+        ]
+      },
+      {
+        "id": "field-message",
+        "name": "message",
+        "type": "textarea",
+        "label": "Tell Us About Your Project (optional)",
+        "placeholder": "Describe your space, timeline, or any questions...",
+        "required": false,
+        "rows": 3
+      }
+    ],
+    "submitButton": {
+      "type": "submit",
+      "text": "Send My Estimate Request",
+      "style": "w-full bg-accent text-white py-4 rounded-lg font-semibold text-lg hover:bg-accent-dark transition"
+    },
+    "trustMicrocopy": "We respond within 24 hours. No spam, ever.",
+    "successState": {
+      "action": "hide form, show thank-you div",
+      "thankYouText": "Thank you! We'll be in touch within 24 hours.",
+      "thankYouStyle": "bg-green-50 border border-green-200 text-green-800 rounded-lg p-6 text-center"
+    },
+    "htmlTemplate": "<form\n  name=\"estimate-request\"\n  method=\"POST\"\n  data-netlify=\"true\"\n  data-netlify-honeypot=\"bot-field\"\n  id=\"estimate-form\"\n>\n  <input type=\"hidden\" name=\"form-name\" value=\"estimate-request\" />\n  <input type=\"text\" name=\"bot-field\" class=\"sr-only\" tabindex=\"-1\" autocomplete=\"off\" aria-hidden=\"true\" />\n\n  <div class=\"form-group\">\n    <label for=\"field-name\">Your Name</label>\n    <input id=\"field-name\" type=\"text\" name=\"name\" placeholder=\"First and last name\" required autocomplete=\"name\" />\n  </div>\n\n  <div class=\"form-group\">\n    <label for=\"field-phone\">Phone Number</label>\n    <input id=\"field-phone\" type=\"tel\" name=\"phone\" inputmode=\"numeric\" placeholder=\"(916) 000-0000\" required autocomplete=\"tel\" />\n  </div>\n\n  <div class=\"form-group\">\n    <label for=\"field-email\">Email Address <span class=\"label-optional\">(optional)</span></label>\n    <input id=\"field-email\" type=\"email\" name=\"email\" placeholder=\"you@example.com\" autocomplete=\"email\" />\n  </div>\n\n  <div class=\"form-group\">\n    <label for=\"field-service\">Service Needed</label>\n    <select id=\"field-service\" name=\"service\" required>\n      <option value=\"\">Select a service...</option>\n      <option value=\"interior-painting\">Interior Painting</option>\n      <option value=\"exterior-painting\">Exterior Painting</option>\n      <option value=\"cabinet-painting\">Cabinet Painting</option>\n      <option value=\"commercial-painting\">Commercial Painting</option>\n      <option value=\"not-sure\">Not Sure Yet</option>\n    </select>\n  </div>\n\n  <div class=\"form-group\">\n    <label for=\"field-message\">Tell Us About Your Project <span class=\"label-optional\">(optional)</span></label>\n    <textarea id=\"field-message\" name=\"message\" placeholder=\"Describe your space, timeline, or any questions...\" rows=\"3\"></textarea>\n  </div>\n\n  <button type=\"submit\">Send My Estimate Request</button>\n  <p class=\"form-trust\">We respond within 24 hours. No spam, ever.</p>\n</form>\n<div id=\"form-success\" class=\"form-success\" hidden>\n  Thank you! We'll be in touch within 24 hours.\n</div>"
+  },
+
+  "vanillaJS": {
+    "formSubmit": "(function () {\n  var form = document.getElementById('estimate-form');\n  var success = document.getElementById('form-success');\n  if (!form || !success) return;\n\n  form.addEventListener('submit', function (e) {\n    e.preventDefault();\n    var data = new FormData(form);\n    fetch('/', {\n      method: 'POST',\n      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },\n      body: new URLSearchParams(data).toString()\n    })\n      .then(function (res) {\n        if (res.ok) {\n          form.hidden = true;\n          success.hidden = false;\n          success.scrollIntoView({ behavior: 'smooth', block: 'center' });\n        } else {\n          throw new Error('Network response was not ok: ' + res.status);\n        }\n      })\n      .catch(function (err) {\n        console.error('Form submission error:', err);\n        // Fallback: let the browser handle native submission\n        form.submit();\n      });\n  });\n})();",
+
+    "headerScroll": "(function () {\n  var header = document.getElementById('site-header');\n  if (!header) return;\n\n  // Create a 1px sentinel div at the very top of <body>\n  var sentinel = document.createElement('div');\n  sentinel.style.cssText = 'position:absolute;top:0;left:0;width:1px;height:1px;pointer-events:none;';\n  sentinel.setAttribute('aria-hidden', 'true');\n  document.body.insertBefore(sentinel, document.body.firstChild);\n\n  var observer = new IntersectionObserver(\n    function (entries) {\n      entries.forEach(function (entry) {\n        if (entry.isIntersecting) {\n          header.classList.remove('header--scrolled');\n        } else {\n          header.classList.add('header--scrolled');\n        }\n      });\n    },\n    { threshold: 0 }\n  );\n\n  observer.observe(sentinel);\n\n  // CSS expected in stylesheet:\n  // #site-header { height: 80px; transition: height 0.2s ease, box-shadow 0.2s ease; }\n  // #site-header.header--scrolled { height: 60px; box-shadow: 0 2px 8px rgba(0,0,0,0.12); }\n})();",
+
+    "mobileMenu": "(function () {\n  var toggle = document.getElementById('mobile-menu-toggle');\n  var menu = document.getElementById('mobile-menu');\n  if (!toggle || !menu) return;\n\n  toggle.addEventListener('click', function () {\n    var isOpen = menu.getAttribute('aria-hidden') === 'false';\n    menu.setAttribute('aria-hidden', isOpen ? 'true' : 'false');\n    toggle.setAttribute('aria-expanded', isOpen ? 'false' : 'true');\n    menu.classList.toggle('mobile-menu--open', !isOpen);\n    document.body.classList.toggle('menu-open', !isOpen);\n  });\n\n  // Close menu on outside click\n  document.addEventListener('click', function (e) {\n    if (\n      menu.classList.contains('mobile-menu--open') &&\n      !menu.contains(e.target) &&\n      !toggle.contains(e.target)\n    ) {\n      menu.setAttribute('aria-hidden', 'true');\n      toggle.setAttribute('aria-expanded', 'false');\n      menu.classList.remove('mobile-menu--open');\n      document.body.classList.remove('menu-open');\n    }\n  });\n\n  // Close menu on Escape key\n  document.addEventListener('keydown', function (e) {\n    if (e.key === 'Escape' && menu.classList.contains('mobile-menu--open')) {\n      menu.setAttribute('aria-hidden', 'true');\n      toggle.setAttribute('aria-expanded', 'false');\n      menu.classList.remove('mobile-menu--open');\n      document.body.classList.remove('menu-open');\n      toggle.focus();\n    }\n  });\n})();",
+
+    "faqAccordion": "(function () {\n  var items = document.querySelectorAll('[data-faq-item]');\n  if (!items.length) return;\n\n  items.forEach(function (item) {\n    var trigger = item.querySelector('[data-faq-trigger]');\n    var panel = item.querySelector('[data-faq-panel]');\n    if (!trigger || !panel) return;\n\n    // Set initial ARIA state\n    var panelId = panel.id || ('faq-panel-' + Math.random().toString(36).slice(2));\n    panel.id = panelId;\n    trigger.setAttribute('aria-controls', panelId);\n    trigger.setAttribute('aria-expanded', 'false');\n    panel.setAttribute('aria-hidden', 'true');\n    panel.style.maxHeight = '0';\n    panel.style.overflow = 'hidden';\n    panel.style.transition = 'max-height 0.25s ease, opacity 0.25s ease';\n    panel.style.opacity = '0';\n\n    trigger.addEventListener('click', function () {\n      var isOpen = trigger.getAttribute('aria-expanded') === 'true';\n\n      // Close all other panels\n      items.forEach(function (other) {\n        var otherTrigger = other.querySelector('[data-faq-trigger]');\n        var otherPanel = other.querySelector('[data-faq-panel]');\n        if (otherTrigger && otherPanel && otherTrigger !== trigger) {\n          otherTrigger.setAttribute('aria-expanded', 'false');\n          otherPanel.setAttribute('aria-hidden', 'true');\n          otherPanel.style.maxHeight = '0';\n          otherPanel.style.opacity = '0';\n          other.classList.remove('faq-item--open');\n        }\n      });\n\n      // Toggle current\n      if (isOpen) {\n        trigger.setAttribute('aria-expanded', 'false');\n        panel.setAttribute('aria-hidden', 'true');\n        panel.style.maxHeight = '0';\n        panel.style.opacity = '0';\n        item.classList.remove('faq-item--open');\n      } else {\n        trigger.setAttribute('aria-expanded', 'true');\n        panel.setAttribute('aria-hidden', 'false');\n        panel.style.maxHeight = panel.scrollHeight + 'px';\n        panel.style.opacity = '1';\n        item.classList.add('faq-item--open');\n      }\n    });\n  });\n})();"
+  },
+
+  "trustSignalPlacements": [
+    {
+      "location": "TrustSignalsBar — immediately below Hero on all pages that use the shared layout",
+      "signals": [
+        "Licensed & Insured — Full coverage on every job",
+        "Locally Owned — Based right here in Dixon, CA",
+        "Free Color Consultation — We help you choose before you commit",
+        "Clean, Punctual, Reliable — We respect your home and your schedule",
+        "Serving Dixon + 20 Miles — Including Vacaville, Woodland, Fairfield & Davis"
+      ],
+      "style": "Horizontal strip, icon + short label per signal, light background, border-bottom, overflow-x-auto on mobile"
+    },
+    {
+      "location": "LeadCaptureForm — below submit button (all form instances)",
+      "signals": ["We respond within 24 hours. No spam, ever."],
+      "style": "Small text, muted color, centered below submit button — p class=\"form-trust text-sm text-neutral-500 text-center mt-2\""
+    },
+    {
+      "location": "Hero section — below headline, above primary CTA",
+      "signals": ["Licensed & Insured | Free Color Consultation | Serving Dixon + 20 Miles"],
+      "style": "Inline trust line — text-sm text-neutral-600, pipe-separated"
+    },
+    {
+      "location": "Service subpages — after hero body text, before service details",
+      "signals": [
+        "Licensed & Insured",
+        "Free Estimates",
+        "Locally Owned",
+        "Serving Dixon + 20 Miles"
+      ],
+      "style": "Mini inline bullet list or 4-icon trust bar — text-sm, checkmark or shield icons, horizontal flex row"
+    },
+    {
+      "location": "Contact page — right column beside form",
+      "signals": [
+        "Licensed & Insured",
+        "Free Color Consultation Included",
+        "We respond same day",
+        "No pressure, no obligation"
+      ],
+      "style": "Vertical list with checkmark icons — font-medium text-neutral-700"
+    },
+    {
+      "location": "Footer — NAP block",
+      "signals": [
+        "Dixon Painting Co.",
+        "(916) 612-2126",
+        "Dixon, CA",
+        "Licensed & Insured badge"
+      ],
+      "style": "Footer column 3 — standard footer text with small badge icon"
+    }
+  ]
+}

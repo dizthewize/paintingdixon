@@ -1,0 +1,326 @@
+[
+  {
+    "page": "homepage",
+    "url": "/",
+    "hero": {
+      "headline": "Your Home Deserves a Fresh Start — We Make It Happen",
+      "subheadline": "Dixon Painting Co. handles interior, exterior, and cabinet painting for homeowners and businesses across Dixon and the surrounding area. Free color consultations. No pressure estimates.",
+      "body": "You don't need a paint project to turn into a headache. We show up on time, protect your space, and leave it cleaner than we found it. Whether you're refreshing a single room or repainting the whole exterior, Dixon Painting Co. delivers a finish that lasts — and a process that doesn't stress you out.",
+      "trustLine": "Licensed & Insured | Free Color Consultation | Serving Dixon + 20 Miles",
+      "primaryCTA": { "text": "Get My Free Estimate", "href": "/contact" },
+      "urgencyCTA": { "text": "Call Now — (916) 612-2126", "href": "tel:+19166122126" }
+    },
+    "sections": {
+      "servicesIntro": "From walls to cabinets to commercial spaces, we handle the full range of painting work that homeowners and business owners in Dixon and beyond need done right.",
+      "services": [
+        {
+          "name": "Interior Painting",
+          "href": "/services/interior-painting",
+          "benefit": "Clean lines, careful prep, and a finish that lasts. We protect your floors, furniture, and trim.",
+          "icon": "paint-roller"
+        },
+        {
+          "name": "Exterior Painting",
+          "href": "/services/exterior-painting",
+          "benefit": "Premium exterior-grade paints built to handle California weather. Siding, trim, fascia, and more.",
+          "icon": "home"
+        },
+        {
+          "name": "Cabinet Painting",
+          "href": "/services/cabinet-painting",
+          "benefit": "Get the look of new cabinets for a fraction of the cost. Factory-smooth finish, any color you choose.",
+          "icon": "cabinet"
+        },
+        {
+          "name": "Commercial Painting",
+          "href": "/services/commercial-painting",
+          "benefit": "Reliable, low-disruption painting for offices, retail, and multi-unit properties. We work around your schedule.",
+          "icon": "building"
+        }
+      ],
+      "trustSignals": [
+        {
+          "icon": "shield-check",
+          "text": "Licensed & Insured",
+          "detail": "Full coverage on every job"
+        },
+        {
+          "icon": "map-pin",
+          "text": "Locally Owned",
+          "detail": "Based right here in Dixon, CA"
+        },
+        {
+          "icon": "clock",
+          "text": "Clean, Punctual, Reliable",
+          "detail": "We respect your home and your schedule"
+        },
+        {
+          "icon": "palette",
+          "text": "Free Color Consultation",
+          "detail": "We help you choose before you commit"
+        },
+        {
+          "icon": "map",
+          "text": "Serving Dixon + 20 Miles",
+          "detail": "Including Vacaville, Woodland, Fairfield & Davis"
+        }
+      ],
+      "faq": [
+        {
+          "q": "Do I need to move my furniture before you arrive?",
+          "a": "We handle all furniture moving and protection as part of our prep work — you don't need to do anything."
+        },
+        {
+          "q": "How long does an interior painting job take?",
+          "a": "Most single-room jobs take one day. Full interior projects typically run 2–4 days depending on home size and scope."
+        },
+        {
+          "q": "What brands of paint do you use?",
+          "a": "We use professional-grade paints (Sherwin-Williams and Benjamin Moore by default) unless you have a preference — we're happy to work with your choice."
+        },
+        {
+          "q": "Do you offer free estimates?",
+          "a": "Yes — always. We also include a free color consultation so you're confident before we pick up a brush."
+        },
+        {
+          "q": "Are you licensed and insured?",
+          "a": "Yes. Dixon Painting Co. is fully licensed and insured. We're happy to provide documentation upon request."
+        },
+        {
+          "q": "What areas do you serve?",
+          "a": "We're based in Dixon, CA and serve all cities within 20 miles — including Vacaville, Woodland, Fairfield, and Davis."
+        }
+      ],
+      "testimonials": [
+        {
+          "name": "Marcus R.",
+          "city": "Dixon, CA",
+          "stars": 5,
+          "quote": "Dixon Painting Co. did our entire interior — living room, hallway, and all three bedrooms. They were on time, finished in two days, and the cleanup was spotless. Highly recommend."
+        },
+        {
+          "name": "Jennifer L.",
+          "city": "Vacaville, CA",
+          "stars": 5,
+          "quote": "We hired them for our exterior and couldn't be happier. The color came out exactly how we envisioned. The crew was professional and respectful of our yard and landscaping."
+        },
+        {
+          "name": "David T.",
+          "city": "Davis, CA",
+          "stars": 5,
+          "quote": "I was skeptical about cabinet painting but they completely transformed our kitchen. It looks like we replaced the cabinets entirely. Worth every penny."
+        }
+      ],
+      "offerBand": {
+        "badge": "LIMITED SLOTS AVAILABLE",
+        "headline": "Not Sure What Color to Choose? We'll Help — Free.",
+        "sub": "Every estimate from Dixon Painting Co. includes a complimentary color consultation. We'll walk through your space, understand your vision, and help you find the perfect shade before a single brush stroke.",
+        "primaryCTA": { "text": "Get My Free Estimate + Color Consult", "href": "/contact" },
+        "secondaryCTA": { "text": "Or Call (916) 612-2126", "href": "tel:+19166122126" }
+      },
+      "serviceAreaMessaging": "Dixon Painting Co. is based in Dixon, CA and proudly serves homeowners and businesses throughout the surrounding area — including Vacaville, Woodland, Fairfield, Davis, and every community within 20 miles. Same quality, same reliability, wherever you are."
+    }
+  },
+  {
+    "page": "services",
+    "url": "/services",
+    "hero": {
+      "headline": "Professional Painting Services for Homes and Businesses in Dixon, CA",
+      "subheadline": "Interior, exterior, cabinets, and commercial — done right the first time.",
+      "body": "Every painting job we take on starts with a conversation and a free estimate. We assess the space, talk through your goals, and give you a clear price before any work begins. No surprises, no upsells, no mess left behind.",
+      "primaryCTA": { "text": "Get a Free Estimate", "href": "/contact" },
+      "urgencyCTA": { "text": "Call (916) 612-2126 — We Pick Up", "href": "tel:+19166122126" }
+    },
+    "sections": {
+      "services": [
+        {
+          "name": "Interior Painting",
+          "href": "/services/interior-painting",
+          "benefit": "Clean lines, careful prep, and a finish that lasts. We protect your floors, furniture, and trim.",
+          "icon": "paint-roller"
+        },
+        {
+          "name": "Exterior Painting",
+          "href": "/services/exterior-painting",
+          "benefit": "Premium exterior-grade paints built to handle California weather. Siding, trim, fascia, and more.",
+          "icon": "home"
+        },
+        {
+          "name": "Cabinet Painting",
+          "href": "/services/cabinet-painting",
+          "benefit": "Get the look of new cabinets for a fraction of the cost. Factory-smooth finish, any color you choose.",
+          "icon": "cabinet"
+        },
+        {
+          "name": "Commercial Painting",
+          "href": "/services/commercial-painting",
+          "benefit": "Reliable, low-disruption painting for offices, retail, and multi-unit properties. We work around your schedule.",
+          "icon": "building"
+        }
+      ]
+    }
+  },
+  {
+    "page": "interior-painting",
+    "url": "/services/interior-painting",
+    "hero": {
+      "headline": "Interior Painting in Dixon, CA — Clean Work, No Mess, Beautiful Finish",
+      "subheadline": "We protect your floors, furniture, and trim — and leave your rooms looking like new.",
+      "body": "Interior painting is more than picking a color. It's proper prep, clean lines, and a finish that doesn't show brush marks six months later. Dixon Painting Co. handles everything from walls and ceilings to trim and accent walls — in any room, any size. We work cleanly, move carefully, and leave your home the way we found it (except with a fresh coat of paint).",
+      "primaryCTA": { "text": "Get a Free Interior Painting Estimate", "href": "/contact" },
+      "urgencyCTA": { "text": "Call (916) 612-2126", "href": "tel:+19166122126" }
+    },
+    "sections": {}
+  },
+  {
+    "page": "exterior-painting",
+    "url": "/services/exterior-painting",
+    "hero": {
+      "headline": "Exterior Painting in Dixon, CA — Built to Handle California Weather",
+      "subheadline": "Protect your home's exterior with a finish that looks great and lasts for years.",
+      "body": "California sun and seasonal heat can fade and crack exterior paint faster than you'd expect. Dixon Painting Co. uses premium exterior-grade paints and thorough surface prep to make sure your finish doesn't just look good on day one — it holds up through every season. We handle siding, trim, fascia, and garage doors, and we'll help you choose a color that stands out in the neighborhood for all the right reasons.",
+      "primaryCTA": { "text": "Get a Free Exterior Painting Estimate", "href": "/contact" },
+      "urgencyCTA": { "text": "Call (916) 612-2126", "href": "tel:+19166122126" }
+    },
+    "sections": {}
+  },
+  {
+    "page": "cabinet-painting",
+    "url": "/services/cabinet-painting",
+    "hero": {
+      "headline": "Cabinet Painting in Dixon, CA — Kitchen Refresh Without the Remodel Price Tag",
+      "subheadline": "Update your kitchen's look for a fraction of what new cabinets cost.",
+      "body": "New cabinets can cost tens of thousands of dollars. A professional cabinet paint job by Dixon Painting Co. can achieve a similar transformation for dramatically less — and with zero demolition. We sand, prime, and apply a durable factory-smooth finish that holds up to daily kitchen use. Choose any color. Keep your existing layout. Get a kitchen that feels completely new.",
+      "primaryCTA": { "text": "Get a Free Cabinet Painting Quote", "href": "/contact" },
+      "urgencyCTA": { "text": "Call (916) 612-2126 — Book Your Spot", "href": "tel:+19166122126" }
+    },
+    "sections": {}
+  },
+  {
+    "page": "commercial-painting",
+    "url": "/services/commercial-painting",
+    "hero": {
+      "headline": "Commercial Painting in Dixon, CA — Professional Results, Minimal Disruption",
+      "subheadline": "We work around your schedule so your business doesn't skip a beat.",
+      "body": "First impressions matter. Whether it's a retail space, office, or multi-unit property, Dixon Painting Co. delivers professional commercial painting with the reliability your business depends on. We coordinate around your hours — early mornings, evenings, weekends — and we're experienced working in occupied spaces. Clean, efficient, and done when we say it will be.",
+      "primaryCTA": { "text": "Request a Commercial Painting Estimate", "href": "/contact" },
+      "urgencyCTA": { "text": "Call (916) 612-2126", "href": "tel:+19166122126" }
+    },
+    "sections": {}
+  },
+  {
+    "page": "gallery",
+    "url": "/gallery",
+    "hero": {
+      "headline": "Our Work — Before & After Projects by Dixon Painting Co.",
+      "subheadline": "See the difference a professional paint job makes.",
+      "body": "Every project in our gallery was completed by our team in Dixon, CA and the surrounding area. Browse interior, exterior, and cabinet painting transformations — then imagine what we can do for your home or business.",
+      "primaryCTA": { "text": "Like What You See? Get a Free Estimate", "href": "/contact" },
+      "urgencyCTA": { "text": "Call (916) 612-2126", "href": "tel:+19166122126" }
+    },
+    "sections": {}
+  },
+  {
+    "page": "service-areas",
+    "url": "/service-areas",
+    "hero": {
+      "headline": "Serving Dixon, Vacaville, Woodland, Fairfield, Davis & Beyond",
+      "subheadline": "Based in Dixon, CA — available anywhere within 20 miles.",
+      "body": "Dixon Painting Co. is rooted in Dixon, CA, but our work takes us all across the region. We serve homeowners and businesses throughout a 20-mile radius — delivering the same punctual, quality painting service that Dixon residents count on, wherever you are.",
+      "primaryCTA": { "text": "Get a Free Estimate in Your Area", "href": "/contact" },
+      "urgencyCTA": { "text": "Call (916) 612-2126", "href": "tel:+19166122126" }
+    },
+    "sections": {
+      "cities": [
+        { "name": "Vacaville", "href": "/service-areas/vacaville" },
+        { "name": "Woodland", "href": "/service-areas/woodland" },
+        { "name": "Fairfield", "href": "/service-areas/fairfield" },
+        { "name": "Davis", "href": "/service-areas/davis" }
+      ]
+    }
+  },
+  {
+    "page": "about",
+    "url": "/about",
+    "hero": {
+      "headline": "Dixon Painting Co. — Local Painters Who Take Pride in the Work",
+      "subheadline": "We're based in Dixon, CA and we treat every project like it's in our own home.",
+      "body": "Dixon Painting Co. was built on a simple idea: show up when you say you will, do the job right, and leave the space cleaner than you found it. We're a locally owned painting contractor serving Dixon and the surrounding area — and we care about what our neighbors think of our work, because we live here too. Every estimate is free. Every job starts with honest communication. And every project ends with a walkthrough to make sure you're completely satisfied before we pack up and leave.",
+      "primaryCTA": { "text": "Get Your Free Estimate", "href": "/contact" },
+      "urgencyCTA": { "text": "Call (916) 612-2126 — Talk to a Real Person", "href": "tel:+19166122126" }
+    },
+    "sections": {}
+  },
+  {
+    "page": "contact",
+    "url": "/contact",
+    "hero": {
+      "headline": "Get Your Free Painting Estimate — No Pressure, No Obligation",
+      "subheadline": "Fill out the form or call (916) 612-2126 — we'll get back to you the same day.",
+      "body": "Whether you're ready to book or just getting started, we're happy to talk through your project and give you a clear, honest estimate at no cost. We serve Dixon, CA and all cities within 20 miles.",
+      "primaryCTA": { "text": "Send My Estimate Request", "href": "/contact" },
+      "urgencyCTA": { "text": "Prefer to call? (916) 612-2126 — we pick up.", "href": "tel:+19166122126" }
+    },
+    "sections": {}
+  },
+  {
+    "page": "city-vacaville",
+    "url": "/service-areas/vacaville",
+    "hero": {
+      "headline": "Painting Services in Vacaville, CA — Dixon Painting Co.",
+      "subheadline": "Local, licensed, and insured — free estimates with no pressure.",
+      "body": "Dixon Painting Co. provides professional interior, exterior, and cabinet painting to homeowners and businesses in Vacaville, CA. Our team is local, licensed, and insured — and we offer free estimates with no pressure. Call (916) 612-2126 or fill out our online form to get started.",
+      "primaryCTA": { "text": "Get a Free Estimate in Vacaville", "href": "/contact" },
+      "urgencyCTA": { "text": "Call (916) 612-2126", "href": "tel:+19166122126" }
+    },
+    "sections": {
+      "city": "Vacaville",
+      "state": "CA"
+    }
+  },
+  {
+    "page": "city-woodland",
+    "url": "/service-areas/woodland",
+    "hero": {
+      "headline": "Painting Services in Woodland, CA — Dixon Painting Co.",
+      "subheadline": "Local, licensed, and insured — free estimates with no pressure.",
+      "body": "Dixon Painting Co. provides professional interior, exterior, and cabinet painting to homeowners and businesses in Woodland, CA. Our team is local, licensed, and insured — and we offer free estimates with no pressure. Call (916) 612-2126 or fill out our online form to get started.",
+      "primaryCTA": { "text": "Get a Free Estimate in Woodland", "href": "/contact" },
+      "urgencyCTA": { "text": "Call (916) 612-2126", "href": "tel:+19166122126" }
+    },
+    "sections": {
+      "city": "Woodland",
+      "state": "CA"
+    }
+  },
+  {
+    "page": "city-fairfield",
+    "url": "/service-areas/fairfield",
+    "hero": {
+      "headline": "Painting Services in Fairfield, CA — Dixon Painting Co.",
+      "subheadline": "Local, licensed, and insured — free estimates with no pressure.",
+      "body": "Dixon Painting Co. provides professional interior, exterior, and cabinet painting to homeowners and businesses in Fairfield, CA. Our team is local, licensed, and insured — and we offer free estimates with no pressure. Call (916) 612-2126 or fill out our online form to get started.",
+      "primaryCTA": { "text": "Get a Free Estimate in Fairfield", "href": "/contact" },
+      "urgencyCTA": { "text": "Call (916) 612-2126", "href": "tel:+19166122126" }
+    },
+    "sections": {
+      "city": "Fairfield",
+      "state": "CA"
+    }
+  },
+  {
+    "page": "city-davis",
+    "url": "/service-areas/davis",
+    "hero": {
+      "headline": "Painting Services in Davis, CA — Dixon Painting Co.",
+      "subheadline": "Local, licensed, and insured — free estimates with no pressure.",
+      "body": "Dixon Painting Co. provides professional interior, exterior, and cabinet painting to homeowners and businesses in Davis, CA. Our team is local, licensed, and insured — and we offer free estimates with no pressure. Call (916) 612-2126 or fill out our online form to get started.",
+      "primaryCTA": { "text": "Get a Free Estimate in Davis", "href": "/contact" },
+      "urgencyCTA": { "text": "Call (916) 612-2126", "href": "tel:+19166122126" }
+    },
+    "sections": {
+      "city": "Davis",
+      "state": "CA"
+    }
+  }
+]
