@@ -1,0 +1,431 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import TrustSignalsBar from '../components/TrustSignalsBar.astro';
+import ServicesGrid from '../components/ServicesGrid.astro';
+import OfferBand from '../components/OfferBand.astro';
+import TestimonialsSection from '../components/TestimonialsSection.astro';
+import LeadCaptureForm from '../components/LeadCaptureForm.astro';
+---
+
+<BaseLayout
+  title="Painting Contractor in Dixon, CA | Dixon Painting Co."
+  description="Dixon Painting Co. offers professional interior & exterior painting in Dixon, CA and surrounding areas. Free estimates. Call (916) 612-2126."
+  isHomepage={true}
+>
+  <!-- 1. Hero -->
+  <Hero
+    headline="Your Home Deserves a Fresh Start — We Make It Happen"
+    subheadline="Dixon Painting Co. handles interior, exterior, and cabinet painting for homeowners and businesses across Dixon and the surrounding area. Free color consultations. No pressure estimates."
+    body="You don't need a paint project to turn into a headache. We show up on time, protect your space, and leave it cleaner than we found it. Whether you're refreshing a single room or repainting the whole exterior, Dixon Painting Co. delivers a finish that lasts — and a process that doesn't stress you out."
+    primaryCtaText="Get My Free Estimate"
+    primaryCtaHref="/contact"
+    urgencyCtaText="Call Now — (916) 612-2126"
+    urgencyCtaHref="tel:+19166122126"
+    trustLine="Licensed & Insured | Free Color Consultation | Serving Dixon + 20 Miles"
+    showForm={true}
+    formId="hero-estimate"
+  />
+
+  <!-- 2. Trust Signals Bar -->
+  <TrustSignalsBar />
+
+  <!-- 3. Services Grid -->
+  <ServicesGrid
+    sectionHeading="Our Painting Services"
+    sectionIntro="From walls to cabinets to commercial spaces, we handle the full range of painting work that homeowners and business owners in Dixon and beyond need done right."
+  />
+
+  <!-- 4. Offer Band -->
+  <OfferBand />
+
+  <!-- 5. Testimonials -->
+  <TestimonialsSection />
+
+  <!-- 6. Service Area Section -->
+  <section class="service-areas-section">
+    <div class="container service-areas-section__layout">
+      <div class="service-areas-section__content">
+        <h2 class="service-areas-section__heading">Serving Dixon + 20 Miles</h2>
+        <p class="service-areas-section__body">
+          Dixon Painting Co. is based in Dixon, CA and proudly serves homeowners and businesses throughout the surrounding area — including Vacaville, Woodland, Fairfield, Davis, and every community within 20 miles. Same quality, same reliability, wherever you are.
+        </p>
+        <ul class="service-areas-section__city-list" role="list">
+          <li><a href="/service-areas">Dixon, CA</a></li>
+          <li><a href="/service-areas/vacaville">Vacaville</a></li>
+          <li><a href="/service-areas/woodland">Woodland</a></li>
+          <li><a href="/service-areas/fairfield">Fairfield</a></li>
+          <li><a href="/service-areas/davis">Davis</a></li>
+          <li><a href="/service-areas">+ 20-Mile Radius</a></li>
+        </ul>
+        <a href="/service-areas" class="service-areas-section__cta">View All Service Areas →</a>
+      </div>
+      <div class="service-areas-section__map">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d50570.27!2d-121.8!3d38.45!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x809953ae9cef8c11%3A0x9c56af82c23e9eed!2sDixon%2C%20CA!5e0!3m2!1sen!2sus!4v1"
+          title="Dixon Painting Co. service area map"
+          loading="lazy"
+          allowfullscreen
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. FAQ Section -->
+  <section class="faq-section">
+    <div class="container">
+      <h2 class="faq-section__heading">Frequently Asked Questions</h2>
+      <div class="faq-list" id="faq-list">
+        {[
+          {
+            q: "Do I need to move my furniture before you arrive?",
+            a: "We handle all furniture moving and protection as part of our prep work — you don't need to do anything.",
+          },
+          {
+            q: "How long does an interior painting job take?",
+            a: "Most single-room jobs take one day. Full interior projects typically run 2–4 days depending on home size and scope.",
+          },
+          {
+            q: "What brands of paint do you use?",
+            a: "We use professional-grade paints (Sherwin-Williams and Benjamin Moore by default) unless you have a preference — we're happy to work with your choice.",
+          },
+          {
+            q: "Do you offer free estimates?",
+            a: "Yes — always. We also include a free color consultation so you're confident before we pick up a brush.",
+          },
+          {
+            q: "Are you licensed and insured?",
+            a: "Yes. Dixon Painting Co. is fully licensed and insured. We're happy to provide documentation upon request.",
+          },
+          {
+            q: "What areas do you serve?",
+            a: "We're based in Dixon, CA and serve all cities within 20 miles — including Vacaville, Woodland, Fairfield, and Davis.",
+          },
+        ].map((item, i) => (
+          <div class="faq-item" data-faq-item>
+            <button
+              class="faq-trigger"
+              data-faq-trigger
+              aria-expanded="false"
+              aria-controls={`faq-panel-${i}`}
+              id={`faq-btn-${i}`}
+            >
+              {item.q}
+              <svg class="faq-chevron" aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="m6 9 6 6 6-6"/>
+              </svg>
+            </button>
+            <div
+              class="faq-panel"
+              data-faq-panel
+              id={`faq-panel-${i}`}
+              role="region"
+              aria-labelledby={`faq-btn-${i}`}
+            >
+              <p>{item.a}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. Final CTA Band -->
+  <section class="final-cta-band">
+    <div class="container final-cta-band__inner">
+      <div class="final-cta-band__content">
+        <h2 class="final-cta-band__heading">Ready to Get Started?</h2>
+        <p class="final-cta-band__sub">
+          Free estimate. Free color consultation. No pressure. Serving Dixon, CA and surrounding areas.
+        </p>
+        <a
+          href="tel:+19166122126"
+          class="final-cta-band__phone"
+          aria-label="Call Dixon Painting Co. at (916) 612-2126"
+        >
+          📞 (916) 612-2126
+        </a>
+      </div>
+      <div class="final-cta-band__form">
+        <LeadCaptureForm
+          headingText="Get Your Free Estimate"
+          showHeading={true}
+          formId="final-cta-estimate"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- LocalBusiness JSON-LD -->
+  <script type="application/ld+json">
+    {JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "HomeAndConstructionBusiness",
+      "name": "Dixon Painting Co.",
+      "url": "https://www.dixonpaintingco.com",
+      "telephone": "+19166122126",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "TBD",
+        "addressLocality": "Dixon",
+        "addressRegion": "CA",
+        "postalCode": "TBD",
+        "addressCountry": "US"
+      },
+      "areaServed": [
+        { "@type": "City", "name": "Dixon" },
+        { "@type": "City", "name": "Vacaville" },
+        { "@type": "City", "name": "Woodland" },
+        { "@type": "City", "name": "Fairfield" },
+        { "@type": "City", "name": "Davis" }
+      ],
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+          "opens": "08:00",
+          "closes": "18:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Saturday"],
+          "opens": "09:00",
+          "closes": "14:00"
+        }
+      ],
+      "priceRange": "$$",
+      "sameAs": []
+    })}
+  </script>
+</BaseLayout>
+
+<style>
+  /* Service Areas Section */
+  .service-areas-section {
+    padding: 5rem 1.5rem;
+    background: var(--color-neutral-50);
+  }
+
+  .service-areas-section__layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
+  }
+
+  .service-areas-section__heading {
+    font-family: var(--font-display);
+    font-size: clamp(1.75rem, 3.5vw, 2.25rem);
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+  }
+
+  .service-areas-section__body {
+    color: var(--color-text-muted);
+    line-height: 1.65;
+    margin-bottom: 1.5rem;
+  }
+
+  .service-areas-section__city-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem 1.5rem;
+    list-style: none;
+    margin: 0 0 1.5rem;
+    padding: 0;
+  }
+
+  .service-areas-section__city-list a {
+    color: var(--color-primary);
+    font-weight: 500;
+    font-size: 0.975rem;
+    text-decoration: none;
+    transition: color 0.15s;
+  }
+
+  .service-areas-section__city-list a:hover {
+    color: var(--color-accent);
+  }
+
+  .service-areas-section__cta {
+    color: var(--color-accent);
+    font-weight: 700;
+    font-size: 0.95rem;
+    text-decoration: none;
+  }
+
+  .service-areas-section__cta:hover {
+    text-decoration: underline;
+  }
+
+  .service-areas-section__map {
+    aspect-ratio: 4/3;
+    background: var(--color-neutral-100);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .service-areas-section__map iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+
+  @media (max-width: 768px) {
+    .service-areas-section__layout {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  /* FAQ Section */
+  .faq-section {
+    padding: 5rem 1.5rem;
+    background: #fff;
+  }
+
+  .faq-section__heading {
+    font-family: var(--font-display);
+    font-size: clamp(1.75rem, 3.5vw, 2.25rem);
+    font-weight: 700;
+    color: var(--color-primary);
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .faq-list {
+    max-width: 720px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .faq-item {
+    border-bottom: 1px solid var(--color-neutral-200);
+  }
+
+  .faq-item:first-child {
+    border-top: 1px solid var(--color-neutral-200);
+  }
+
+  .faq-trigger {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.25rem 0;
+    background: none;
+    border: none;
+    text-align: left;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    cursor: pointer;
+    transition: color 0.15s;
+  }
+
+  .faq-trigger:hover {
+    color: var(--color-accent);
+  }
+
+  .faq-chevron {
+    flex-shrink: 0;
+    transition: transform 0.2s ease;
+    color: var(--color-text-muted);
+  }
+
+  .faq-trigger[aria-expanded="true"] .faq-chevron {
+    transform: rotate(180deg);
+  }
+
+  .faq-panel {
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.25s ease;
+  }
+
+  .faq-panel p {
+    padding-bottom: 1.25rem;
+    color: var(--color-text-muted);
+    line-height: 1.7;
+  }
+
+  /* Final CTA Band */
+  .final-cta-band {
+    background: var(--color-neutral-50);
+    padding: 5rem 1.5rem;
+    border-top: 1px solid var(--color-neutral-200);
+  }
+
+  .final-cta-band__inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+
+  .final-cta-band__heading {
+    font-family: var(--font-display);
+    font-size: clamp(1.75rem, 3.5vw, 2.25rem);
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+  }
+
+  .final-cta-band__sub {
+    color: var(--color-text-muted);
+    line-height: 1.65;
+    margin-bottom: 1.5rem;
+  }
+
+  .final-cta-band__phone {
+    display: inline-block;
+    color: var(--color-accent);
+    font-weight: 700;
+    font-size: 1.25rem;
+    text-decoration: none;
+    transition: color 0.15s;
+  }
+
+  .final-cta-band__phone:hover {
+    color: var(--color-accent-dark);
+  }
+
+  @media (max-width: 768px) {
+    .final-cta-band__inner {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+  }
+</style>
+
+<script>
+  // FAQ accordion
+  document.querySelectorAll('[data-faq-trigger]').forEach((trigger) => {
+    trigger.addEventListener('click', () => {
+      const btn = trigger as HTMLButtonElement;
+      const isOpen = btn.getAttribute('aria-expanded') === 'true';
+      const panelId = btn.getAttribute('aria-controls');
+      const panel = panelId ? document.getElementById(panelId) : null;
+
+      // Close all others
+      document.querySelectorAll('[data-faq-trigger]').forEach((t) => {
+        const otherBtn = t as HTMLButtonElement;
+        const otherId = otherBtn.getAttribute('aria-controls');
+        const otherPanel = otherId ? document.getElementById(otherId) : null;
+        otherBtn.setAttribute('aria-expanded', 'false');
+        if (otherPanel) otherPanel.style.maxHeight = '0';
+      });
+
+      // Toggle current
+      if (!isOpen && panel) {
+        btn.setAttribute('aria-expanded', 'true');
+        panel.style.maxHeight = panel.scrollHeight + 'px';
+      }
+    });
+  });
+</script>
