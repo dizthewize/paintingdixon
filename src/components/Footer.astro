@@ -1,0 +1,220 @@
+---
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="site-footer" role="contentinfo">
+  <div class="container">
+    <div class="site-footer__grid">
+      <!-- Column 1: Brand + NAP -->
+      <div class="site-footer__col site-footer__col--brand">
+        <div class="site-footer__brand-name">Dixon Painting Co.</div>
+        <p class="site-footer__tagline">Professional Painting in Dixon, CA and Surrounding Areas</p>
+        <div class="site-footer__nap">
+          <p>Dixon, CA</p>
+          <a
+            href="tel:+19166122126"
+            class="site-footer__phone-link"
+            aria-label="Call Dixon Painting Co. at (916) 612-2126"
+          >(916) 612-2126</a>
+          <p class="site-footer__license">Licensed &amp; Insured</p>
+        </div>
+      </div>
+
+      <!-- Column 2: Services -->
+      <div class="site-footer__col">
+        <h3 class="site-footer__heading">Services</h3>
+        <ul class="site-footer__link-list" role="list">
+          <li><a href="/services/interior-painting" class="site-footer__link">Interior Painting</a></li>
+          <li><a href="/services/exterior-painting" class="site-footer__link">Exterior Painting</a></li>
+          <li><a href="/services/cabinet-painting" class="site-footer__link">Cabinet Painting</a></li>
+          <li><a href="/services/commercial-painting" class="site-footer__link">Commercial Painting</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 3: Service Areas -->
+      <div class="site-footer__col">
+        <h3 class="site-footer__heading">Service Areas</h3>
+        <ul class="site-footer__link-list" role="list">
+          <li><a href="/service-areas" class="site-footer__link">Dixon, CA</a></li>
+          <li><a href="/service-areas/vacaville" class="site-footer__link">Vacaville</a></li>
+          <li><a href="/service-areas/woodland" class="site-footer__link">Woodland</a></li>
+          <li><a href="/service-areas/fairfield" class="site-footer__link">Fairfield</a></li>
+          <li><a href="/service-areas/davis" class="site-footer__link">Davis</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 4: Company -->
+      <div class="site-footer__col">
+        <h3 class="site-footer__heading">Company</h3>
+        <ul class="site-footer__link-list" role="list">
+          <li><a href="/about" class="site-footer__link">About Us</a></li>
+          <li><a href="/gallery" class="site-footer__link">Our Work</a></li>
+          <li><a href="/blog" class="site-footer__link">Blog</a></li>
+          <li><a href="/contact" class="site-footer__link">Contact</a></li>
+        </ul>
+        <div class="site-footer__cta-block">
+          <a href="/contact" class="site-footer__cta-btn">Get Free Estimate</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="site-footer__bottom">
+      <p>&copy; {currentYear} Dixon Painting Co. All rights reserved.</p>
+      <div class="site-footer__legal">
+        <a href="/privacy" class="site-footer__legal-link">Privacy Policy</a>
+        <a href="/terms" class="site-footer__legal-link">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    background: #0F172A;
+    color: rgba(255, 255, 255, 0.75);
+    padding: 4rem 1.5rem 2rem;
+  }
+
+  .site-footer__grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 3rem;
+    margin-bottom: 3rem;
+  }
+
+  .site-footer__brand-name {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 0.5rem;
+  }
+
+  .site-footer__tagline {
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.55);
+    margin-bottom: 1.25rem;
+    line-height: 1.5;
+  }
+
+  .site-footer__nap {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    font-size: 0.875rem;
+  }
+
+  .site-footer__phone-link {
+    color: var(--color-accent);
+    font-weight: 700;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: color 0.15s;
+  }
+
+  .site-footer__phone-link:hover {
+    color: #fff;
+  }
+
+  .site-footer__license {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.45);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .site-footer__heading {
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    margin-bottom: 1rem;
+  }
+
+  .site-footer__link-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .site-footer__link {
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.65);
+    text-decoration: none;
+    transition: color 0.15s;
+  }
+
+  .site-footer__link:hover {
+    color: #fff;
+  }
+
+  .site-footer__cta-block {
+    margin-top: 1.5rem;
+  }
+
+  .site-footer__cta-btn {
+    display: inline-block;
+    background: var(--color-accent);
+    color: #fff;
+    padding: 0.6rem 1.25rem;
+    border-radius: 4px;
+    font-size: 0.875rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background 0.15s;
+  }
+
+  .site-footer__cta-btn:hover {
+    background: var(--color-accent-dark);
+  }
+
+  .site-footer__bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 1.5rem;
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.4);
+  }
+
+  .site-footer__legal {
+    display: flex;
+    gap: 1.5rem;
+  }
+
+  .site-footer__legal-link {
+    color: rgba(255, 255, 255, 0.4);
+    text-decoration: none;
+    transition: color 0.15s;
+  }
+
+  .site-footer__legal-link:hover {
+    color: rgba(255, 255, 255, 0.75);
+  }
+
+  @media (max-width: 1024px) {
+    .site-footer__grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .site-footer__grid {
+      grid-template-columns: 1fr;
+    }
+
+    .site-footer__bottom {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+</style>

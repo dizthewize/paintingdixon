@@ -1,0 +1,147 @@
+---
+const testimonials = [
+  {
+    quote: "Dixon Painting Co. did a fantastic job on our living room and hallway. They showed up on time every day, kept the mess contained, and the finish looks absolutely perfect. Highly recommend.",
+    name: "Marcus R.",
+    city: "Dixon, CA",
+    service: "Interior Painting",
+    avatarSrc: "/assets/images/testimonial-avatar-1.webp",
+    rating: 5,
+  },
+  {
+    quote: "We had the entire exterior of our home repainted and couldn't be happier. The crew was professional, the prep work was thorough, and the color came out exactly as we imagined. Great local company.",
+    name: "Jennifer L.",
+    city: "Vacaville, CA",
+    service: "Exterior Painting",
+    avatarSrc: "/assets/images/testimonial-avatar-2.webp",
+    rating: 5,
+  },
+  {
+    quote: "Our kitchen cabinets look brand new. The finish is smooth and durable — you'd never guess they were painted. Much cheaper than replacement and the results are just as impressive.",
+    name: "David T.",
+    city: "Davis, CA",
+    service: "Cabinet Painting",
+    avatarSrc: "/assets/images/testimonial-avatar-3.webp",
+    rating: 5,
+  },
+];
+---
+
+<section class="testimonials">
+  <div class="container">
+    <div class="testimonials__header">
+      <h2 class="testimonials__heading">What Dixon Homeowners Are Saying</h2>
+      <p class="testimonials__subheading">Real results from real neighbors.</p>
+    </div>
+
+    <div class="testimonials__grid">
+      {testimonials.map(t => (
+        <article class="testimonial-card">
+          <div class="testimonial-card__stars" aria-label={`${t.rating} out of 5 stars`} role="img">
+            {'★'.repeat(t.rating)}
+          </div>
+          <blockquote class="testimonial-card__quote">
+            <p>"{t.quote}"</p>
+          </blockquote>
+          <div class="testimonial-card__reviewer">
+            <img
+              src={t.avatarSrc}
+              alt=""
+              class="testimonial-card__avatar"
+              width="44"
+              height="44"
+              loading="lazy"
+            />
+            <div class="testimonial-card__info">
+              <div class="testimonial-card__name">{t.name}</div>
+              <div class="testimonial-card__city">{t.city} · {t.service}</div>
+            </div>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .testimonials {
+    padding: 5rem 1.5rem;
+    background: #fff;
+  }
+
+  .testimonials__header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .testimonials__heading {
+    font-family: var(--font-display);
+    font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: 0.75rem;
+  }
+
+  .testimonials__subheading {
+    font-size: 1.05rem;
+    color: var(--color-text-muted);
+  }
+
+  .testimonials__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .testimonial-card {
+    background: #fff;
+    border: 1px solid var(--color-neutral-200);
+    border-radius: 8px;
+    padding: 1.75rem;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+  }
+
+  .testimonial-card__stars {
+    color: var(--color-accent);
+    font-size: 1rem;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.75rem;
+  }
+
+  .testimonial-card__quote {
+    margin: 0 0 1.25rem 0;
+    padding: 0;
+  }
+
+  .testimonial-card__quote p {
+    font-size: 0.975rem;
+    line-height: 1.7;
+    color: var(--color-neutral-700);
+    font-style: italic;
+  }
+
+  .testimonial-card__reviewer {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .testimonial-card__avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+  }
+
+  .testimonial-card__name {
+    font-weight: 600;
+    font-size: 0.875rem;
+    color: var(--color-neutral-900);
+  }
+
+  .testimonial-card__city {
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+  }
+</style>

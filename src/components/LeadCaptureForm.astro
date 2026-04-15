@@ -1,0 +1,302 @@
+---
+interface Props {
+  headingText?: string;
+  showHeading?: boolean;
+  formId?: string;
+}
+
+const {
+  headingText = 'Get Your Free Estimate',
+  showHeading = true,
+  formId = 'lead-capture',
+} = Astro.props;
+---
+
+<div class="lead-form-wrapper">
+  {showHeading && <h3 class="lead-form__heading">{headingText}</h3>}
+
+  <form
+    id={`form-${formId}`}
+    name={formId}
+    method="POST"
+    data-netlify="true"
+    netlify-honeypot="website"
+    class="lead-form"
+    novalidate
+  >
+    <input type="hidden" name="form-name" value={formId} />
+
+    <!-- Honeypot field -->
+    <div class="lead-form__honeypot" aria-hidden="true">
+      <label>Leave this empty<input type="text" name="website" tabindex="-1" autocomplete="off" /></label>
+    </div>
+
+    <div class="lead-form__field">
+      <label class="lead-form__label" for={`${formId}-name`}>
+        Full Name <span class="lead-form__required" aria-hidden="true">*</span>
+      </label>
+      <input
+        class="lead-form__input"
+        type="text"
+        id={`${formId}-name`}
+        name="name"
+        required
+        aria-required="true"
+        autocomplete="name"
+        placeholder="Your full name"
+      />
+    </div>
+
+    <div class="lead-form__field">
+      <label class="lead-form__label" for={`${formId}-phone`}>
+        Phone Number <span class="lead-form__required" aria-hidden="true">*</span>
+      </label>
+      <input
+        class="lead-form__input"
+        type="tel"
+        id={`${formId}-phone`}
+        name="phone"
+        required
+        aria-required="true"
+        inputmode="numeric"
+        autocomplete="tel"
+        placeholder="(916) 555-0000"
+      />
+    </div>
+
+    <div class="lead-form__field">
+      <label class="lead-form__label" for={`${formId}-email`}>
+        Email Address <span class="lead-form__optional">(optional)</span>
+      </label>
+      <input
+        class="lead-form__input"
+        type="email"
+        id={`${formId}-email`}
+        name="email"
+        autocomplete="email"
+        placeholder="you@example.com"
+      />
+    </div>
+
+    <div class="lead-form__field">
+      <label class="lead-form__label" for={`${formId}-service`}>
+        Service Needed <span class="lead-form__required" aria-hidden="true">*</span>
+      </label>
+      <select
+        class="lead-form__select"
+        id={`${formId}-service`}
+        name="service"
+        required
+        aria-required="true"
+      >
+        <option value="">Select a service…</option>
+        <option value="Interior Painting">Interior Painting</option>
+        <option value="Exterior Painting">Exterior Painting</option>
+        <option value="Cabinet Painting">Cabinet Painting</option>
+        <option value="Commercial Painting">Commercial Painting</option>
+        <option value="Not Sure">Not Sure — I'll explain</option>
+      </select>
+    </div>
+
+    <button type="submit" class="lead-form__button">
+      Get My Free Estimate
+    </button>
+
+    <p class="lead-form__trust">
+      We respond within 24 hours. No spam, ever.
+    </p>
+  </form>
+
+  <!-- Success state -->
+  <div class="lead-form__success" id={`success-${formId}`} hidden role="status">
+    <svg aria-hidden="true" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2">
+      <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+      <polyline points="22 4 12 14.01 9 11.01"/>
+    </svg>
+    <h3>Thank You!</h3>
+    <p>
+      We received your request and will be in touch within 24 hours.<br />
+      Questions? Call <a href="tel:+19166122126">(916) 612-2126</a>.
+    </p>
+  </div>
+</div>
+
+<style>
+  .lead-form-wrapper {
+    width: 100%;
+  }
+
+  .lead-form__heading {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: 1.25rem;
+  }
+
+  .lead-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.875rem;
+  }
+
+  .lead-form__honeypot {
+    position: absolute;
+    left: -9999px;
+    top: -9999px;
+    opacity: 0;
+  }
+
+  .lead-form__field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .lead-form__label {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--color-text);
+  }
+
+  .lead-form__required {
+    color: #DC2626;
+  }
+
+  .lead-form__optional {
+    font-weight: 400;
+    color: var(--color-text-muted);
+    font-size: 0.8rem;
+  }
+
+  .lead-form__input,
+  .lead-form__select {
+    width: 100%;
+    height: 48px;
+    padding: 0 1rem;
+    border: 1.5px solid var(--color-neutral-200);
+    border-radius: 4px;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    color: var(--color-text);
+    background: #fff;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+    appearance: none;
+  }
+
+  .lead-form__input:focus,
+  .lead-form__select:focus {
+    border-color: var(--color-accent);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(217, 119, 6, 0.15);
+  }
+
+  .lead-form__input.error,
+  .lead-form__select.error {
+    border-color: #DC2626;
+  }
+
+  .lead-form__button {
+    width: 100%;
+    height: 52px;
+    background: var(--color-accent);
+    color: #fff;
+    font-weight: 700;
+    font-size: 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.15s ease;
+    margin-top: 0.25rem;
+    font-family: var(--font-body);
+  }
+
+  .lead-form__button:hover {
+    background: var(--color-accent-dark);
+  }
+
+  .lead-form__button:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+  }
+
+  .lead-form__trust {
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+    text-align: center;
+    margin-top: 0.25rem;
+  }
+
+  .lead-form__success {
+    text-align: center;
+    padding: 2rem 1rem;
+  }
+
+  .lead-form__success h3 {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    color: var(--color-primary);
+    margin: 1rem 0 0.5rem;
+  }
+
+  .lead-form__success p {
+    color: var(--color-text-muted);
+    line-height: 1.6;
+  }
+
+  .lead-form__success a {
+    color: var(--color-accent);
+    font-weight: 700;
+  }
+</style>
+
+<script>
+  document.querySelectorAll('form[data-netlify]').forEach((form) => {
+    const formEl = form as HTMLFormElement;
+    const formId = formEl.getAttribute('name') || 'lead-capture';
+    const successEl = document.getElementById(`success-${formId}`);
+
+    formEl.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      // Honeypot check
+      const honeypot = formEl.querySelector('input[name="website"]') as HTMLInputElement;
+      if (honeypot?.value) return;
+
+      // Basic validation
+      let valid = true;
+      formEl.querySelectorAll('[required]').forEach((field) => {
+        const input = field as HTMLInputElement | HTMLSelectElement;
+        if (!input.value.trim()) {
+          input.classList.add('error');
+          valid = false;
+        } else {
+          input.classList.remove('error');
+        }
+      });
+      if (!valid) return;
+
+      const submitBtn = formEl.querySelector('button[type="submit"]') as HTMLButtonElement;
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Sending…';
+
+      try {
+        const data = new FormData(formEl);
+        await fetch('/', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: new URLSearchParams(data as any).toString(),
+        });
+
+        formEl.hidden = true;
+        if (successEl) successEl.hidden = false;
+      } catch {
+        // Fallback: submit normally
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Get My Free Estimate';
+        formEl.submit();
+      }
+    });
+  });
+</script>

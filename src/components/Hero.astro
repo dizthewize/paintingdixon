@@ -1,0 +1,212 @@
+---
+import LeadCaptureForm from './LeadCaptureForm.astro';
+
+interface Props {
+  headline: string;
+  subheadline: string;
+  body?: string;
+  primaryCtaText?: string;
+  primaryCtaHref?: string;
+  urgencyCtaText?: string;
+  urgencyCtaHref?: string;
+  trustLine?: string;
+  showForm?: boolean;
+  imageSrc?: string;
+  imageAlt?: string;
+  formId?: string;
+}
+
+const {
+  headline,
+  subheadline,
+  body,
+  primaryCtaText = 'Get My Free Estimate',
+  primaryCtaHref = '/contact',
+  urgencyCtaText,
+  urgencyCtaHref = 'tel:+19166122126',
+  trustLine = 'Licensed & Insured | Free Color Consultation | Serving Dixon + 20 Miles',
+  showForm = true,
+  imageSrc = '/assets/images/hero-bg.webp',
+  imageAlt = 'Dixon Painting Co. — professional painting contractor in Dixon, CA',
+  formId = 'hero-estimate',
+} = Astro.props;
+---
+
+<section
+  class={`hero ${showForm ? 'hero--with-form' : 'hero--no-form'}`}
+  style={`background: linear-gradient(rgba(30,58,95,0.72), rgba(30,58,95,0.72)), url('${imageSrc}') center/cover no-repeat;`}
+>
+  <div class="container hero__inner">
+    <!-- Content column -->
+    <div class="hero__content">
+      {trustLine && (
+        <p class="hero__trust-line">{trustLine}</p>
+      )}
+      <h1 class="hero__headline">{headline}</h1>
+      <p class="hero__subheadline">{subheadline}</p>
+      {body && <p class="hero__body">{body}</p>}
+
+      <div class="hero__cta-group">
+        <a href={primaryCtaHref} class="hero__cta-primary">
+          {primaryCtaText}
+        </a>
+        {urgencyCtaText && (
+          <a
+            href={urgencyCtaHref}
+            class="hero__cta-secondary"
+            aria-label={urgencyCtaHref.startsWith('tel:') ? `Call Dixon Painting Co. at (916) 612-2126` : undefined}
+          >
+            {urgencyCtaText}
+          </a>
+        )}
+      </div>
+    </div>
+
+    <!-- Form column -->
+    {showForm && (
+      <div class="hero__form-col">
+        <div class="hero__form-card">
+          <LeadCaptureForm
+            headingText="Get Your Free Estimate"
+            showHeading={true}
+            formId={formId}
+          />
+        </div>
+      </div>
+    )}
+  </div>
+</section>
+
+<style>
+  .hero {
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+  }
+
+  .hero__inner {
+    display: grid;
+    grid-template-columns: 1fr 420px;
+    gap: 3rem;
+    align-items: center;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    width: 100%;
+  }
+
+  .hero--no-form .hero__inner {
+    grid-template-columns: 1fr;
+    max-width: 760px;
+  }
+
+  .hero__trust-line {
+    font-size: 0.8rem;
+    color: var(--color-accent);
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+
+  .hero__headline {
+    font-family: var(--font-display);
+    font-size: clamp(2.25rem, 5vw, 3.5rem);
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+  }
+
+  .hero__subheadline {
+    font-size: clamp(1rem, 1.5vw, 1.15rem);
+    color: rgba(255, 255, 255, 0.88);
+    line-height: 1.65;
+    margin-bottom: 0.75rem;
+    max-width: 560px;
+  }
+
+  .hero__body {
+    font-size: 0.975rem;
+    color: rgba(255, 255, 255, 0.75);
+    line-height: 1.7;
+    margin-bottom: 2rem;
+    max-width: 520px;
+  }
+
+  .hero__cta-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+
+  .hero__cta-primary {
+    background: var(--color-accent);
+    color: #fff;
+    font-weight: 700;
+    padding: 1rem 2rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: background 0.15s ease;
+    white-space: nowrap;
+  }
+
+  .hero__cta-primary:hover {
+    background: var(--color-accent-dark);
+  }
+
+  .hero__cta-secondary {
+    color: #fff;
+    font-weight: 600;
+    padding: 1rem 2rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 1rem;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    transition: border-color 0.15s ease;
+    white-space: nowrap;
+  }
+
+  .hero__cta-secondary:hover {
+    border-color: #fff;
+  }
+
+  .hero__form-card {
+    background: #fff;
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+  }
+
+  @media (max-width: 1024px) {
+    .hero {
+      min-height: 100dvh;
+    }
+
+    .hero__inner {
+      grid-template-columns: 1fr;
+    }
+
+    .hero__form-col {
+      width: 100%;
+      max-width: 480px;
+    }
+
+    .hero__subheadline,
+    .hero__body {
+      max-width: 100%;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .hero__cta-group {
+      flex-direction: column;
+    }
+
+    .hero__cta-primary,
+    .hero__cta-secondary {
+      text-align: center;
+    }
+  }
+</style>

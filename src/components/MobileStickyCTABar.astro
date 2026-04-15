@@ -1,0 +1,77 @@
+---
+---
+
+<nav class="mobile-cta-bar" role="navigation" aria-label="Quick contact">
+  <a
+    href="tel:+19166122126"
+    class="mobile-cta-bar__call"
+    aria-label="Call Dixon Painting Co. at (916) 612-2126"
+  >
+    <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.64 3.5 2 2 0 0 1 3.62 1.36h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 9a16 16 0 0 0 6 6l1-1a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+    </svg>
+    Call Now
+  </a>
+  <a
+    href="/contact"
+    class="mobile-cta-bar__quote"
+    aria-label="Get a free painting estimate"
+  >
+    Get Estimate
+  </a>
+</nav>
+
+<style>
+  .mobile-cta-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 56px;
+    z-index: 50;
+    background: var(--color-primary);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    animation: cta-fade-in 0.3s ease 0.5s both;
+  }
+
+  @media (min-width: 768px) {
+    .mobile-cta-bar {
+      display: none;
+    }
+  }
+
+  .mobile-cta-bar__call {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    color: #fff;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-decoration: none;
+    border-right: 1px solid rgba(255, 255, 255, 0.15);
+    transition: background 0.15s;
+  }
+
+  .mobile-cta-bar__call:active {
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  .mobile-cta-bar__quote {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-accent);
+    color: #fff;
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: background 0.15s;
+  }
+
+  .mobile-cta-bar__quote:active {
+    background: var(--color-accent-dark);
+  }
+</style>

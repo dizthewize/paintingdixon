@@ -1,0 +1,177 @@
+---
+interface Props {
+  sectionHeading?: string;
+  sectionIntro?: string;
+}
+
+const {
+  sectionHeading = 'Our Painting Services',
+  sectionIntro = 'From walls to cabinets to commercial spaces, we handle the full range of painting work that homeowners and business owners in Dixon and beyond need done right.',
+} = Astro.props;
+
+const services = [
+  {
+    name: 'Interior Painting',
+    href: '/services/interior-painting',
+    benefit: 'Clean, precise interior work that protects your floors and furniture — and leaves every room looking fresh.',
+    icon: 'brush',
+  },
+  {
+    name: 'Exterior Painting',
+    href: '/services/exterior-painting',
+    benefit: 'Weather-resistant finishes built for California sun. We prep the surface right so the color lasts for years.',
+    icon: 'home',
+  },
+  {
+    name: 'Cabinet Painting',
+    href: '/services/cabinet-painting',
+    benefit: 'Get the look of new cabinets for a fraction of the cost. Factory-smooth finish, any color you choose.',
+    icon: 'wrench',
+  },
+  {
+    name: 'Commercial Painting',
+    href: '/services/commercial-painting',
+    benefit: 'Reliable commercial painting with minimal disruption. We work around your schedule and deliver on time.',
+    icon: 'building',
+  },
+];
+---
+
+<section class="services-section">
+  <div class="container">
+    <h2 class="services-section__heading">{sectionHeading}</h2>
+    <p class="services-section__intro">{sectionIntro}</p>
+
+    <ul class="services-grid" role="list">
+      {services.map(service => (
+        <li class="service-card">
+          <div class="service-card__icon" aria-hidden="true">
+            {service.icon === 'brush' && (
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18.37 2.63 14 7l-1.59-1.59a2 2 0 0 0-2.82 0L8 7l9 9 1.59-1.59a2 2 0 0 0 0-2.82L17 10l4.37-4.37a2.12 2.12 0 1 0-3-3z"/>
+                <path d="M9 8c-2 3-4 3.5-7 4l8 10c2-1 6-5 6-7"/>
+                <path d="M14.5 17.5 4.5 15"/>
+              </svg>
+            )}
+            {service.icon === 'home' && (
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                <polyline points="9 22 9 12 15 12 15 22"/>
+              </svg>
+            )}
+            {service.icon === 'wrench' && (
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+              </svg>
+            )}
+            {service.icon === 'building' && (
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="4" y="2" width="16" height="20" rx="2"/>
+                <path d="M9 22v-4h6v4"/>
+                <path d="M8 6h.01"/>
+                <path d="M16 6h.01"/>
+                <path d="M12 6h.01"/>
+                <path d="M12 10h.01"/>
+                <path d="M12 14h.01"/>
+                <path d="M16 10h.01"/>
+                <path d="M16 14h.01"/>
+                <path d="M8 10h.01"/>
+                <path d="M8 14h.01"/>
+              </svg>
+            )}
+          </div>
+          <h3 class="service-card__name">{service.name}</h3>
+          <p class="service-card__benefit">{service.benefit}</p>
+          <a href={service.href} class="service-card__link">
+            Learn about {service.name} →
+          </a>
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>
+
+<style>
+  .services-section {
+    background: var(--color-bg-section);
+    padding: 5rem 1.5rem;
+  }
+
+  .services-section__heading {
+    font-family: var(--font-display);
+    font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+    font-weight: 700;
+    color: var(--color-primary);
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  .services-section__intro {
+    font-size: 1.05rem;
+    color: var(--color-text-muted);
+    text-align: center;
+    max-width: 680px;
+    margin: 0 auto 3rem;
+    line-height: 1.65;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .service-card {
+    background: #fff;
+    border: 1px solid var(--color-neutral-200);
+    border-radius: 8px;
+    padding: 2rem 1.5rem;
+    transition: box-shadow 0.15s ease, transform 0.15s ease;
+  }
+
+  .service-card:hover {
+    box-shadow: 0 8px 24px rgba(30, 58, 95, 0.1);
+    transform: translateY(-2px);
+  }
+
+  .service-card__icon {
+    width: 44px;
+    height: 44px;
+    color: var(--color-accent);
+    margin-bottom: 1rem;
+  }
+
+  .service-card__icon svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  .service-card__name {
+    font-family: var(--font-display);
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: 0.5rem;
+  }
+
+  .service-card__benefit {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+
+  .service-card__link {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--color-accent);
+    text-decoration: none;
+  }
+
+  .service-card__link:hover {
+    text-decoration: underline;
+  }
+</style>
