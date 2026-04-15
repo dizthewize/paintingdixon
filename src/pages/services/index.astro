@@ -1,0 +1,78 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Hero from '../../components/Hero.astro';
+import ServicesGrid from '../../components/ServicesGrid.astro';
+import LeadCaptureForm from '../../components/LeadCaptureForm.astro';
+---
+
+<BaseLayout
+  title="Painting Services in Dixon, CA | Dixon Painting Co."
+  description="From interior to exterior and cabinet painting, Dixon Painting Co. delivers quality results for homeowners & businesses. Get your free estimate today."
+>
+  <Hero
+    headline="Professional Painting Services for Homes and Businesses in Dixon, CA"
+    subheadline="Interior, exterior, cabinets, and commercial — done right the first time."
+    body="Every painting job we take on starts with a conversation and a free estimate. We assess the space, talk through your goals, and give you a clear price before any work begins. No surprises, no upsells, no mess left behind."
+    primaryCtaText="Get a Free Estimate"
+    primaryCtaHref="/contact"
+    urgencyCtaText="Call (916) 612-2126 — We Pick Up"
+    urgencyCtaHref="tel:+19166122126"
+    showForm={false}
+  />
+
+  <ServicesGrid
+    sectionHeading="What We Do"
+    sectionIntro="We offer the full range of painting services for residential and commercial clients throughout Dixon and surrounding areas."
+  />
+
+  <!-- Page bottom CTA -->
+  <section class="page-cta-band">
+    <div class="container page-cta-band__inner">
+      <div>
+        <h2 class="page-cta-band__heading">Ready for a Free Estimate?</h2>
+        <p class="page-cta-band__sub">No pressure. No obligation. Just an honest price and a plan.</p>
+        <a href="tel:+19166122126" class="page-cta-band__phone" aria-label="Call Dixon Painting Co. at (916) 612-2126">
+          (916) 612-2126
+        </a>
+      </div>
+      <div>
+        <LeadCaptureForm headingText="Request Your Free Estimate" formId="services-estimate" />
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page-cta-band {
+    background: var(--color-neutral-50);
+    padding: 5rem 1.5rem;
+    border-top: 1px solid var(--color-neutral-200);
+  }
+  .page-cta-band__inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+  .page-cta-band__heading {
+    font-family: var(--font-display);
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    color: var(--color-primary);
+    margin-bottom: 0.75rem;
+  }
+  .page-cta-band__sub {
+    color: var(--color-text-muted);
+    margin-bottom: 1.25rem;
+    line-height: 1.65;
+  }
+  .page-cta-band__phone {
+    color: var(--color-accent);
+    font-weight: 700;
+    font-size: 1.125rem;
+    text-decoration: none;
+  }
+  .page-cta-band__phone:hover { text-decoration: underline; }
+  @media (max-width: 768px) {
+    .page-cta-band__inner { grid-template-columns: 1fr; gap: 2rem; }
+  }
+</style>

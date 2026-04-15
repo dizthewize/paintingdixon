@@ -1,0 +1,107 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import TrustSignalsBar from '../components/TrustSignalsBar.astro';
+import LeadCaptureForm from '../components/LeadCaptureForm.astro';
+---
+
+<BaseLayout
+  title="About Dixon Painting Co. | Local Painters in Dixon, CA"
+  description="Learn about Dixon Painting Co. — a locally trusted painting contractor serving Dixon, CA and surrounding communities. Licensed, insured, and committed to quality."
+>
+  <!-- Hero -->
+  <section class="about-hero">
+    <div class="container about-hero__inner">
+      <div class="about-hero__content">
+        <p class="about-hero__eyebrow">About Us</p>
+        <h1 class="about-hero__headline">Dixon Painting Co. — Local Painters Who Take Pride in the Work</h1>
+        <p class="about-hero__sub">We're based in Dixon, CA and we treat every project like it's in our own home.</p>
+        <p class="about-hero__body">Dixon Painting Co. was built on a simple idea: show up when you say you will, do the job right, and leave the space cleaner than you found it. We're a locally owned painting contractor serving Dixon and the surrounding area — and we care about what our neighbors think of our work, because we live here too. Every estimate is free. Every job starts with honest communication. And every project ends with a walkthrough to make sure you're completely satisfied before we pack up and leave.</p>
+        <div class="about-hero__cta-group">
+          <a href="/contact" class="about-hero__cta-primary">Get Your Free Estimate</a>
+          <a href="tel:+19166122126" class="about-hero__cta-phone" aria-label="Call Dixon Painting Co. at (916) 612-2126">Call (916) 612-2126 — Talk to a Real Person</a>
+        </div>
+      </div>
+      <div class="about-hero__image">
+        <img
+          src="/assets/images/about-team.webp"
+          alt="The Dixon Painting Co. team"
+          width="800"
+          height="600"
+          loading="eager"
+        />
+      </div>
+    </div>
+  </section>
+
+  <TrustSignalsBar />
+
+  <!-- Values Section -->
+  <section class="about-values">
+    <div class="container">
+      <h2 class="about-values__heading">What We Stand For</h2>
+      <div class="about-values__grid">
+        {[
+          { title: 'Show Up On Time', body: 'We schedule a time and we keep it. No vague arrival windows, no last-minute cancellations without a call.' },
+          { title: 'Honest Pricing', body: 'You get a clear estimate before we start. No hidden fees, no scope creep surprises at the end of the job.' },
+          { title: 'Clean Work Habits', body: 'We protect your floors, furniture, and landscaping. Your home gets a fresh coat of paint — not a cleanup project.' },
+          { title: 'Quality That Lasts', body: 'We use professional-grade paints and prep surfaces properly. A paint job is only as good as the prep work underneath it.' },
+          { title: 'Local Accountability', body: 'We live here. We work here. Your review matters because your neighbors will see it — and so will we.' },
+          { title: 'Free Estimates, No Pressure', body: 'We'll walk through the job, give you an honest price, and let you decide. No hard sell, no follow-up harassment.' },
+        ].map(v => (
+          <div class="about-value-card">
+            <h3 class="about-value-card__title">{v.title}</h3>
+            <p class="about-value-card__body">{v.body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Bottom CTA -->
+  <section class="about-cta">
+    <div class="container about-cta__inner">
+      <div>
+        <h2 class="about-cta__heading">Ready to Work with Us?</h2>
+        <p class="about-cta__sub">Free estimate. Free color consultation. Serving Dixon, CA and all cities within 20 miles.</p>
+        <a href="tel:+19166122126" class="about-cta__phone" aria-label="Call Dixon Painting Co. at (916) 612-2126">(916) 612-2126</a>
+      </div>
+      <div>
+        <LeadCaptureForm headingText="Request a Free Estimate" formId="about-estimate" />
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .about-hero { padding: 5rem 1.5rem; background: #fff; }
+  .about-hero__inner { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+  .about-hero__eyebrow { font-size: 0.8rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-accent); margin-bottom: 0.75rem; }
+  .about-hero__headline { font-family: var(--font-display); font-size: clamp(2rem, 4vw, 2.75rem); color: var(--color-primary); margin-bottom: 1rem; }
+  .about-hero__sub { font-size: 1.05rem; color: var(--color-text-muted); margin-bottom: 1rem; }
+  .about-hero__body { color: var(--color-text); line-height: 1.7; margin-bottom: 2rem; }
+  .about-hero__cta-group { display: flex; flex-wrap: wrap; gap: 1rem; }
+  .about-hero__cta-primary { background: var(--color-accent); color: #fff; padding: 1rem 2rem; border-radius: 4px; font-weight: 700; text-decoration: none; transition: background 0.15s; }
+  .about-hero__cta-primary:hover { background: var(--color-accent-dark); }
+  .about-hero__cta-phone { color: var(--color-primary); font-weight: 600; text-decoration: none; padding: 1rem 0; }
+  .about-hero__cta-phone:hover { color: var(--color-accent); }
+  .about-hero__image img { width: 100%; height: auto; border-radius: 8px; object-fit: cover; }
+
+  .about-values { padding: 5rem 1.5rem; background: var(--color-neutral-50); }
+  .about-values__heading { font-family: var(--font-display); font-size: clamp(1.75rem, 3.5vw, 2.25rem); color: var(--color-primary); text-align: center; margin-bottom: 3rem; }
+  .about-values__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
+  .about-value-card { background: #fff; border: 1px solid var(--color-neutral-200); border-radius: 8px; padding: 1.75rem; }
+  .about-value-card__title { font-family: var(--font-display); font-size: 1.1rem; color: var(--color-primary); margin-bottom: 0.75rem; }
+  .about-value-card__body { font-size: 0.9rem; color: var(--color-text-muted); line-height: 1.65; }
+
+  .about-cta { background: var(--color-neutral-50); padding: 5rem 1.5rem; border-top: 1px solid var(--color-neutral-200); }
+  .about-cta__inner { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+  .about-cta__heading { font-family: var(--font-display); font-size: clamp(1.5rem, 3vw, 2rem); color: var(--color-primary); margin-bottom: 0.75rem; }
+  .about-cta__sub { color: var(--color-text-muted); margin-bottom: 1.25rem; line-height: 1.65; }
+  .about-cta__phone { color: var(--color-accent); font-weight: 700; font-size: 1.125rem; text-decoration: none; }
+  .about-cta__phone:hover { text-decoration: underline; }
+
+  @media (max-width: 768px) {
+    .about-hero__inner { grid-template-columns: 1fr; }
+    .about-cta__inner { grid-template-columns: 1fr; gap: 2rem; }
+  }
+</style>

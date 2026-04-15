@@ -1,0 +1,134 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LeadCaptureForm from '../../components/LeadCaptureForm.astro';
+
+const posts = [
+  {
+    slug: '#',
+    title: 'How to Choose the Right Paint Color for Your Home Exterior',
+    excerpt: "Choosing an exterior paint color is one of the most impactful decisions a homeowner can make. Here's how to narrow it down without second-guessing yourself.",
+    date: 'March 12, 2025',
+    category: 'Color Tips',
+  },
+  {
+    slug: '#',
+    title: 'Interior vs. Exterior Paint: What\'s the Difference and Why It Matters',
+    excerpt: "Using the wrong type of paint can mean peeling, fading, or a finish that wears out in a fraction of the time. Here's what you need to know.",
+    date: 'February 28, 2025',
+    category: 'Painting Tips',
+  },
+  {
+    slug: '#',
+    title: 'Cabinet Painting vs. Cabinet Replacement: An Honest Comparison',
+    excerpt: "New cabinets can cost $10,000–$30,000. Professional cabinet painting can transform the same kitchen for far less. Here's when each makes sense.",
+    date: 'February 10, 2025',
+    category: 'Cabinet Painting',
+  },
+  {
+    slug: '#',
+    title: 'How to Prep Your Home Before the Painters Arrive',
+    excerpt: "A little prep goes a long way. Here's exactly what to do before your painting crew shows up — and what we take care of ourselves.",
+    date: 'January 22, 2025',
+    category: 'Homeowner Tips',
+  },
+  {
+    slug: '#',
+    title: '5 Signs It\'s Time to Repaint Your Home\'s Exterior',
+    excerpt: "Paint does more than look good — it protects your home from moisture and sun damage. Here are the warning signs you shouldn't ignore.",
+    date: 'January 8, 2025',
+    category: 'Exterior Painting',
+  },
+  {
+    slug: '#',
+    title: 'What to Expect During a Professional Interior Paint Job',
+    excerpt: "First time hiring painters? Here's a realistic, step-by-step breakdown of what happens from estimate to final walkthrough.",
+    date: 'December 15, 2024',
+    category: 'Interior Painting',
+  },
+];
+---
+
+<BaseLayout
+  title="Painting Tips & Advice | Dixon Painting Co. Blog"
+  description="Painting tips, color advice, and homeowner guides from Dixon Painting Co. in Dixon, CA. Learn how to prepare your home, choose colors, and more."
+>
+  <section class="blog-header">
+    <div class="container">
+      <h1 class="blog-header__headline">Painting Tips &amp; Homeowner Advice</h1>
+      <p class="blog-header__sub">Straight talk from a local painting contractor — color tips, prep guides, and honest advice for homeowners in Dixon and the surrounding area.</p>
+    </div>
+  </section>
+
+  <section class="blog-main">
+    <div class="container blog-main__inner">
+      <div class="blog-posts">
+        {posts.map(post => (
+          <article class="blog-card">
+            <p class="blog-card__category">{post.category}</p>
+            <h2 class="blog-card__title">
+              <a href={post.slug}>{post.title}</a>
+            </h2>
+            <p class="blog-card__excerpt">{post.excerpt}</p>
+            <div class="blog-card__footer">
+              <span class="blog-card__date">{post.date}</span>
+              <a href={post.slug} class="blog-card__read-more" aria-label={`Read full article: ${post.title}`}>Read Article →</a>
+            </div>
+          </article>
+        ))}
+      </div>
+
+      <aside class="blog-sidebar">
+        <div class="blog-sidebar__card">
+          <h3 class="blog-sidebar__heading">Ready to Get Started?</h3>
+          <p class="blog-sidebar__body">Free estimate. Free color consultation. Serving Dixon, CA and all cities within 20 miles.</p>
+          <LeadCaptureForm headingText="" showHeading={false} formId="blog-sidebar-estimate" />
+        </div>
+
+        <div class="blog-sidebar__info">
+          <h3 class="blog-sidebar__heading">Our Services</h3>
+          <ul class="blog-sidebar__links" role="list">
+            <li><a href="/services/interior-painting">Interior Painting</a></li>
+            <li><a href="/services/exterior-painting">Exterior Painting</a></li>
+            <li><a href="/services/cabinet-painting">Cabinet Painting</a></li>
+            <li><a href="/services/commercial-painting">Commercial Painting</a></li>
+          </ul>
+          <a href="tel:+19166122126" class="blog-sidebar__phone" aria-label="Call Dixon Painting Co. at (916) 612-2126">(916) 612-2126</a>
+        </div>
+      </aside>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .blog-header { background: var(--color-primary); padding: 4rem 1.5rem; }
+  .blog-header__headline { font-family: var(--font-display); font-size: clamp(2rem, 4vw, 2.75rem); color: #fff; margin-bottom: 0.75rem; }
+  .blog-header__sub { color: rgba(255,255,255,0.8); font-size: 1.05rem; max-width: 560px; line-height: 1.65; }
+
+  .blog-main { padding: 5rem 1.5rem; background: var(--color-neutral-50); }
+  .blog-main__inner { display: grid; grid-template-columns: 1fr 360px; gap: 4rem; align-items: start; }
+
+  .blog-posts { display: flex; flex-direction: column; gap: 2rem; }
+  .blog-card { background: #fff; border: 1px solid var(--color-neutral-200); border-radius: 8px; padding: 2rem; }
+  .blog-card__category { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--color-accent); margin-bottom: 0.5rem; }
+  .blog-card__title { font-family: var(--font-display); font-size: 1.25rem; color: var(--color-primary); margin-bottom: 0.75rem; line-height: 1.3; }
+  .blog-card__title a { text-decoration: none; color: inherit; }
+  .blog-card__title a:hover { color: var(--color-accent); }
+  .blog-card__excerpt { color: var(--color-text-muted); font-size: 0.9rem; line-height: 1.65; margin-bottom: 1.25rem; }
+  .blog-card__footer { display: flex; justify-content: space-between; align-items: center; }
+  .blog-card__date { font-size: 0.8rem; color: var(--color-text-muted); }
+  .blog-card__read-more { color: var(--color-accent); font-weight: 600; font-size: 0.875rem; text-decoration: none; }
+  .blog-card__read-more:hover { text-decoration: underline; }
+
+  .blog-sidebar { display: flex; flex-direction: column; gap: 2rem; }
+  .blog-sidebar__card { background: #fff; border: 1px solid var(--color-neutral-200); border-radius: 8px; padding: 1.75rem; }
+  .blog-sidebar__info { background: #fff; border: 1px solid var(--color-neutral-200); border-radius: 8px; padding: 1.75rem; }
+  .blog-sidebar__heading { font-family: var(--font-display); font-size: 1.1rem; color: var(--color-primary); margin-bottom: 0.75rem; }
+  .blog-sidebar__body { font-size: 0.875rem; color: var(--color-text-muted); margin-bottom: 1.25rem; line-height: 1.6; }
+  .blog-sidebar__links { list-style: none; margin: 0 0 1.25rem; padding: 0; display: flex; flex-direction: column; gap: 0.5rem; }
+  .blog-sidebar__links a { color: var(--color-primary); text-decoration: none; font-size: 0.9rem; }
+  .blog-sidebar__links a:hover { color: var(--color-accent); }
+  .blog-sidebar__phone { display: block; color: var(--color-accent); font-weight: 700; font-size: 1.1rem; text-decoration: none; }
+  .blog-sidebar__phone:hover { text-decoration: underline; }
+
+  @media (max-width: 960px) { .blog-main__inner { grid-template-columns: 1fr; } }
+</style>

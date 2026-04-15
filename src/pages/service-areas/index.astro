@@ -1,0 +1,157 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LeadCaptureForm from '../../components/LeadCaptureForm.astro';
+import TrustSignalsBar from '../../components/TrustSignalsBar.astro';
+
+const cities = [
+  { name: 'Vacaville', slug: 'vacaville', distance: '14 miles', tagline: 'Interior & exterior painting for Vacaville homes and businesses.' },
+  { name: 'Woodland', slug: 'woodland', distance: '18 miles', tagline: 'Quality painting services throughout Woodland, CA.' },
+  { name: 'Fairfield', slug: 'fairfield', distance: '16 miles', tagline: 'Trusted painting contractor serving Fairfield homeowners.' },
+  { name: 'Davis', slug: 'davis', distance: '12 miles', tagline: 'Professional painters proudly serving Davis, CA.' },
+];
+---
+
+<BaseLayout
+  title="Service Areas | Dixon Painting Co. — Serving Dixon, CA and Surrounding Cities"
+  description="Dixon Painting Co. serves Dixon, Vacaville, Woodland, Fairfield, Davis, and all cities within 20 miles of Dixon, CA. Free estimates for all service areas."
+>
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <div class="container">
+      <ol class="breadcrumb__list" role="list">
+        <li><a href="/">Home</a></li>
+        <li aria-hidden="true">›</li>
+        <li aria-current="page">Service Areas</li>
+      </ol>
+    </div>
+  </nav>
+
+  <section class="areas-hero">
+    <div class="container">
+      <h1 class="areas-hero__headline">Painting Contractor Serving Dixon, CA and All Nearby Cities</h1>
+      <p class="areas-hero__sub">We serve Dixon and every city within 20 miles — same crew, same quality, same free estimate policy.</p>
+      <p class="areas-hero__body">Dixon Painting Co. is based in Dixon, CA and takes on projects throughout Solano and Yolo counties. Whether you're in Vacaville, Woodland, Fairfield, Davis, or anywhere in between, you get the same team and the same commitment: show up on time, do the job right, leave the space clean.</p>
+      <div class="areas-hero__cta-group">
+        <a href="/contact" class="areas-hero__cta-primary">Get a Free Estimate</a>
+        <a href="tel:+19166122126" class="areas-hero__cta-phone" aria-label="Call Dixon Painting Co. at (916) 612-2126">Call (916) 612-2126</a>
+      </div>
+    </div>
+  </section>
+
+  <TrustSignalsBar />
+
+  <section class="cities-section">
+    <div class="container">
+      <h2 class="cities-section__heading">Cities We Serve</h2>
+      <p class="cities-section__intro">Click any city to learn more about painting services in that area.</p>
+      <div class="cities-grid">
+        <div class="city-card city-card--featured">
+          <div class="city-card__badge">Home Base</div>
+          <h3 class="city-card__name">Dixon, CA</h3>
+          <p class="city-card__tagline">Our home. Every project in Dixon gets the full treatment — interior, exterior, cabinet, and commercial painting.</p>
+          <ul class="city-card__services" role="list">
+            <li>Interior Painting</li>
+            <li>Exterior Painting</li>
+            <li>Cabinet Painting</li>
+            <li>Commercial Painting</li>
+          </ul>
+          <a href="/contact" class="city-card__cta">Get a Free Estimate</a>
+        </div>
+        {cities.map(city => (
+          <div class="city-card">
+            <p class="city-card__distance">{city.distance} from Dixon</p>
+            <h3 class="city-card__name">{city.name}, CA</h3>
+            <p class="city-card__tagline">{city.tagline}</p>
+            <a href={`/service-areas/${city.slug}`} class="city-card__cta">Painting in {city.name} →</a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="areas-map">
+    <div class="container">
+      <h2 class="areas-map__heading">Our Coverage Area</h2>
+      <p class="areas-map__sub">We travel up to 20 miles from Dixon, CA for all painting projects — no travel fees.</p>
+    </div>
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d50570.27!2d-121.8!3d38.45!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x809953ae9cef8c11%3A0x9c56af82c23e9eed!2sDixon%2C%20CA!5e0!3m2!1sen!2sus!4v1"
+      title="Dixon Painting Co. service area map centered on Dixon, CA"
+      loading="lazy"
+      allowfullscreen
+      referrerpolicy="no-referrer-when-downgrade"
+    ></iframe>
+  </section>
+
+  <section class="areas-cta">
+    <div class="container areas-cta__inner">
+      <div>
+        <h2 class="areas-cta__heading">Don't See Your City?</h2>
+        <p class="areas-cta__sub">Call us or fill out the form — if you're within 20 miles of Dixon, we can most likely take your project. Free estimate either way.</p>
+        <a href="tel:+19166122126" class="areas-cta__phone" aria-label="Call Dixon Painting Co. at (916) 612-2126">(916) 612-2126</a>
+      </div>
+      <div>
+        <LeadCaptureForm headingText="Request a Free Estimate" formId="service-areas-estimate" />
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .breadcrumb { background: var(--color-neutral-50); border-bottom: 1px solid var(--color-neutral-200); padding: 0.75rem 1.5rem; }
+  .breadcrumb__list { display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center; list-style: none; margin: 0; padding: 0; font-size: 0.875rem; color: var(--color-text-muted); }
+  .breadcrumb__list a { color: var(--color-primary); text-decoration: none; }
+  .breadcrumb__list a:hover { color: var(--color-accent); }
+
+  .areas-hero { padding: 5rem 1.5rem; background: var(--color-primary); }
+  .areas-hero__headline { font-family: var(--font-display); font-size: clamp(2rem, 4vw, 2.75rem); color: #fff; margin-bottom: 1rem; max-width: 700px; }
+  .areas-hero__sub { font-size: 1.05rem; color: rgba(255,255,255,0.88); margin-bottom: 0.75rem; max-width: 600px; }
+  .areas-hero__body { color: rgba(255,255,255,0.7); line-height: 1.65; max-width: 620px; margin-bottom: 2rem; }
+  .areas-hero__cta-group { display: flex; flex-wrap: wrap; gap: 1rem; }
+  .areas-hero__cta-primary { background: var(--color-accent); color: #fff; padding: 1rem 2rem; border-radius: 4px; font-weight: 700; text-decoration: none; transition: background 0.15s; }
+  .areas-hero__cta-primary:hover { background: var(--color-accent-dark); }
+  .areas-hero__cta-phone { border: 2px solid rgba(255,255,255,0.5); color: #fff; padding: 1rem 2rem; border-radius: 4px; font-weight: 600; text-decoration: none; transition: border-color 0.15s; }
+  .areas-hero__cta-phone:hover { border-color: #fff; }
+
+  .cities-section { padding: 5rem 1.5rem; background: #fff; }
+  .cities-section__heading { font-family: var(--font-display); font-size: clamp(1.75rem, 3.5vw, 2.25rem); color: var(--color-primary); text-align: center; margin-bottom: 0.5rem; }
+  .cities-section__intro { text-align: center; color: var(--color-text-muted); margin-bottom: 3rem; }
+  .cities-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; }
+  .city-card { background: var(--color-neutral-50); border: 1px solid var(--color-neutral-200); border-radius: 8px; padding: 1.75rem; display: flex; flex-direction: column; gap: 0.75rem; position: relative; }
+  .city-card--featured { border-color: var(--color-primary); background: #fff; }
+  .city-card__badge { display: inline-block; background: var(--color-primary); color: #fff; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; padding: 0.2rem 0.6rem; border-radius: 3px; align-self: flex-start; }
+  .city-card__distance { font-size: 0.8rem; color: var(--color-accent); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; }
+  .city-card__name { font-family: var(--font-display); font-size: 1.25rem; color: var(--color-primary); }
+  .city-card__tagline { font-size: 0.9rem; color: var(--color-text-muted); line-height: 1.6; flex: 1; }
+  .city-card__services { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0.3rem; }
+  .city-card__services li { font-size: 0.85rem; color: var(--color-text); display: flex; align-items: center; gap: 0.5rem; }
+  .city-card__services li::before { content: '✓'; color: var(--color-accent); font-weight: 700; }
+  .city-card__cta { display: inline-block; color: var(--color-accent); font-weight: 600; font-size: 0.9rem; text-decoration: none; margin-top: auto; }
+  .city-card__cta:hover { text-decoration: underline; }
+
+  .areas-map { padding: 4rem 0 0; background: var(--color-neutral-50); border-top: 1px solid var(--color-neutral-200); }
+  .areas-map__heading { font-family: var(--font-display); font-size: clamp(1.5rem, 3vw, 2rem); color: var(--color-primary); text-align: center; margin-bottom: 0.5rem; }
+  .areas-map__sub { text-align: center; color: var(--color-text-muted); margin-bottom: 2rem; }
+  .areas-map iframe { width: 100%; height: 400px; border: none; display: block; }
+
+  .areas-cta { background: #fff; padding: 5rem 1.5rem; border-top: 1px solid var(--color-neutral-200); }
+  .areas-cta__inner { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+  .areas-cta__heading { font-family: var(--font-display); font-size: clamp(1.5rem, 3vw, 2rem); color: var(--color-primary); margin-bottom: 0.75rem; }
+  .areas-cta__sub { color: var(--color-text-muted); margin-bottom: 1.25rem; line-height: 1.65; }
+  .areas-cta__phone { color: var(--color-accent); font-weight: 700; font-size: 1.125rem; text-decoration: none; }
+  .areas-cta__phone:hover { text-decoration: underline; }
+
+  @media (max-width: 768px) {
+    .areas-cta__inner { grid-template-columns: 1fr; gap: 2rem; }
+  }
+</style>
+
+<script type="application/ld+json">
+  {JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.dixonpaintingco.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Service Areas", "item": "https://www.dixonpaintingco.com/service-areas" }
+    ]
+  })}
+</script>

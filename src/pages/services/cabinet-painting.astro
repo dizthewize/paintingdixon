@@ -1,0 +1,96 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Hero from '../../components/Hero.astro';
+import OfferBand from '../../components/OfferBand.astro';
+import LeadCaptureForm from '../../components/LeadCaptureForm.astro';
+---
+
+<BaseLayout
+  title="Cabinet Painting in Dixon, CA | Dixon Painting Co."
+  description="Refresh your kitchen with professional cabinet painting in Dixon, CA. Fraction of replacement cost. Call Dixon Painting Co. at (916) 612-2126 for a free quote."
+>
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <div class="container">
+      <ol class="breadcrumb__list" role="list">
+        <li><a href="/">Home</a></li>
+        <li aria-hidden="true">›</li>
+        <li><a href="/services">Services</a></li>
+        <li aria-hidden="true">›</li>
+        <li aria-current="page">Cabinet Painting</li>
+      </ol>
+    </div>
+  </nav>
+
+  <Hero
+    headline="Cabinet Painting in Dixon, CA — Kitchen Refresh Without the Remodel Price Tag"
+    subheadline="Update your kitchen's look for a fraction of what new cabinets cost."
+    body="New cabinets can cost tens of thousands of dollars. A professional cabinet paint job by Dixon Painting Co. can achieve a similar transformation for dramatically less — and with zero demolition. We sand, prime, and apply a durable factory-smooth finish that holds up to daily kitchen use. Choose any color. Keep your existing layout. Get a kitchen that feels completely new."
+    primaryCtaText="Get a Free Cabinet Painting Quote"
+    primaryCtaHref="/contact"
+    urgencyCtaText="Call (916) 612-2126 — Book Your Spot"
+    urgencyCtaHref="tel:+19166122126"
+    imageSrc="/assets/images/service-cabinet-painting.webp"
+    imageAlt="Cabinet painting by Dixon Painting Co."
+    showForm={false}
+  />
+
+  <section class="service-detail">
+    <div class="container service-detail__inner">
+      <div class="service-detail__content">
+        <h2>Our Cabinet Painting Process</h2>
+        <ul class="service-detail__list">
+          <li>Remove cabinet doors and hardware for proper access</li>
+          <li>Thorough cleaning and degreasing of all surfaces</li>
+          <li>Sanding for adhesion — no shortcuts</li>
+          <li>Premium bonding primer applied to all cabinet surfaces</li>
+          <li>2 finish coats in the color of your choice</li>
+          <li>Factory-smooth finish using professional spray equipment</li>
+          <li>Reinstall doors, hardware, and hinges</li>
+          <li>Final inspection and cleanup</li>
+        </ul>
+        <div class="service-detail__trust">
+          <span>Licensed &amp; Insured</span>
+          <span>Free Color Consultation</span>
+          <span>Free Estimate</span>
+        </div>
+      </div>
+      <div class="service-detail__cta">
+        <LeadCaptureForm headingText="Get a Free Cabinet Painting Quote" formId="cabinet-estimate" />
+      </div>
+    </div>
+  </section>
+
+  <OfferBand
+    headline="Free Color Consultation with Every Cabinet Estimate"
+    subheadline="White, greige, navy, sage — we'll help you find the color that transforms your kitchen."
+    primaryCtaText="Schedule My Free Quote"
+  />
+
+  <script type="application/ld+json">
+    {JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.dixonpaintingco.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://www.dixonpaintingco.com/services" },
+        { "@type": "ListItem", "position": 3, "name": "Cabinet Painting", "item": "https://www.dixonpaintingco.com/services/cabinet-painting" }
+      ]
+    })}
+  </script>
+</BaseLayout>
+
+<style>
+  .breadcrumb { background: var(--color-neutral-50); border-bottom: 1px solid var(--color-neutral-200); padding: 0.75rem 1.5rem; }
+  .breadcrumb__list { display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center; list-style: none; margin: 0; padding: 0; font-size: 0.875rem; color: var(--color-text-muted); }
+  .breadcrumb__list a { color: var(--color-primary); text-decoration: none; }
+  .breadcrumb__list a:hover { color: var(--color-accent); }
+  .service-detail { padding: 5rem 1.5rem; background: #fff; }
+  .service-detail__inner { display: grid; grid-template-columns: 1fr 400px; gap: 4rem; align-items: start; }
+  .service-detail__content h2 { font-family: var(--font-display); font-size: clamp(1.5rem, 3vw, 2rem); color: var(--color-primary); margin-bottom: 1.5rem; }
+  .service-detail__list { list-style: none; margin: 0 0 2rem; padding: 0; display: flex; flex-direction: column; gap: 0.75rem; }
+  .service-detail__list li { display: flex; align-items: flex-start; gap: 0.75rem; color: var(--color-text); line-height: 1.5; font-size: 0.975rem; }
+  .service-detail__list li::before { content: '✓'; color: var(--color-accent); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+  .service-detail__trust { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+  .service-detail__trust span { background: var(--color-neutral-50); border: 1px solid var(--color-neutral-200); padding: 0.35rem 0.875rem; border-radius: 4px; font-size: 0.8rem; font-weight: 600; color: var(--color-primary); }
+  @media (max-width: 900px) { .service-detail__inner { grid-template-columns: 1fr; } }
+</style>

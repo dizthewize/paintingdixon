@@ -1,0 +1,121 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LeadCaptureForm from '../../components/LeadCaptureForm.astro';
+import TrustSignalsBar from '../../components/TrustSignalsBar.astro';
+import OfferBand from '../../components/OfferBand.astro';
+---
+
+<BaseLayout
+  title="Painting Contractor Vacaville, CA | Dixon Painting Co."
+  description="Professional interior and exterior painting in Vacaville, CA. Dixon Painting Co. serves Vacaville with free estimates and a quality guarantee. Call (916) 612-2126."
+>
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <div class="container">
+      <ol class="breadcrumb__list" role="list">
+        <li><a href="/">Home</a></li>
+        <li aria-hidden="true">›</li>
+        <li><a href="/service-areas">Service Areas</a></li>
+        <li aria-hidden="true">›</li>
+        <li aria-current="page">Vacaville</li>
+      </ol>
+    </div>
+  </nav>
+
+  <section class="city-hero">
+    <div class="container">
+      <p class="city-hero__eyebrow">Serving Vacaville, CA</p>
+      <h1 class="city-hero__headline">Painting Contractor in Vacaville, CA — Trusted Local Painters</h1>
+      <p class="city-hero__sub">Dixon Painting Co. serves Vacaville homeowners and businesses with the same quality and reliability we bring to every project in the area.</p>
+      <p class="city-hero__body">Located just 14 miles from our base in Dixon, Vacaville is one of our most active service areas. We've helped Vacaville homeowners refresh interiors, update exteriors, and transform kitchens with cabinet painting — and we treat every project with the same care we'd give our own homes. Free estimate, free color consultation, and a crew that shows up on time.</p>
+      <div class="city-hero__cta-group">
+        <a href="/contact" class="city-hero__cta-primary">Get a Free Estimate in Vacaville</a>
+        <a href="tel:+19166122126" class="city-hero__cta-phone" aria-label="Call Dixon Painting Co. at (916) 612-2126">Call (916) 612-2126</a>
+      </div>
+    </div>
+  </section>
+
+  <TrustSignalsBar />
+
+  <section class="city-services">
+    <div class="container city-services__inner">
+      <div class="city-services__content">
+        <h2>Painting Services Available in Vacaville</h2>
+        <ul class="city-services__list">
+          <li><a href="/services/interior-painting">Interior House Painting</a> — bedrooms, living rooms, kitchens, trim, ceilings</li>
+          <li><a href="/services/exterior-painting">Exterior House Painting</a> — full repaints, touch-ups, wood repair and prep</li>
+          <li><a href="/services/cabinet-painting">Kitchen Cabinet Painting</a> — factory-smooth finish, any color, no demolition</li>
+          <li><a href="/services/commercial-painting">Commercial Painting</a> — offices, retail, multi-unit residential</li>
+        </ul>
+        <div class="city-services__trust">
+          <span>Licensed &amp; Insured</span>
+          <span>Free Estimates</span>
+          <span>Free Color Consultation</span>
+        </div>
+        <h3>Why Vacaville Homeowners Choose Dixon Painting Co.</h3>
+        <ul class="city-services__reasons">
+          <li>We're local — based 14 miles away in Dixon, not a franchise dispatched from across the state</li>
+          <li>We give clear, written estimates before any work begins</li>
+          <li>We protect your floors, furniture, and landscaping throughout the job</li>
+          <li>We do a walkthrough with you at the end — no surprises, no hidden fees</li>
+          <li>We're licensed, insured, and accountable to the community we live in</li>
+        </ul>
+      </div>
+      <div class="city-services__cta">
+        <LeadCaptureForm headingText="Free Estimate for Vacaville" formId="vacaville-estimate" />
+      </div>
+    </div>
+  </section>
+
+  <OfferBand
+    headline="Serving Vacaville — Free Estimate, No Obligation"
+    subheadline="Call or fill out the form. We'll get back to you the same day."
+    primaryCtaText="Request My Free Estimate"
+  />
+</BaseLayout>
+
+<style>
+  .breadcrumb { background: var(--color-neutral-50); border-bottom: 1px solid var(--color-neutral-200); padding: 0.75rem 1.5rem; }
+  .breadcrumb__list { display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center; list-style: none; margin: 0; padding: 0; font-size: 0.875rem; color: var(--color-text-muted); }
+  .breadcrumb__list a { color: var(--color-primary); text-decoration: none; }
+  .breadcrumb__list a:hover { color: var(--color-accent); }
+
+  .city-hero { padding: 5rem 1.5rem; background: var(--color-primary); }
+  .city-hero__eyebrow { font-size: 0.8rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-accent); margin-bottom: 0.75rem; }
+  .city-hero__headline { font-family: var(--font-display); font-size: clamp(2rem, 4vw, 2.75rem); color: #fff; margin-bottom: 1rem; max-width: 700px; }
+  .city-hero__sub { font-size: 1.05rem; color: rgba(255,255,255,0.88); margin-bottom: 0.75rem; max-width: 600px; }
+  .city-hero__body { color: rgba(255,255,255,0.7); line-height: 1.65; max-width: 620px; margin-bottom: 2rem; }
+  .city-hero__cta-group { display: flex; flex-wrap: wrap; gap: 1rem; }
+  .city-hero__cta-primary { background: var(--color-accent); color: #fff; padding: 1rem 2rem; border-radius: 4px; font-weight: 700; text-decoration: none; transition: background 0.15s; }
+  .city-hero__cta-primary:hover { background: var(--color-accent-dark); }
+  .city-hero__cta-phone { border: 2px solid rgba(255,255,255,0.5); color: #fff; padding: 1rem 2rem; border-radius: 4px; font-weight: 600; text-decoration: none; transition: border-color 0.15s; }
+  .city-hero__cta-phone:hover { border-color: #fff; }
+
+  .city-services { padding: 5rem 1.5rem; background: #fff; }
+  .city-services__inner { display: grid; grid-template-columns: 1fr 400px; gap: 4rem; align-items: start; }
+  .city-services__content h2 { font-family: var(--font-display); font-size: clamp(1.5rem, 3vw, 2rem); color: var(--color-primary); margin-bottom: 1.5rem; }
+  .city-services__content h3 { font-family: var(--font-display); font-size: 1.25rem; color: var(--color-primary); margin: 2rem 0 1rem; }
+  .city-services__list { list-style: none; margin: 0 0 2rem; padding: 0; display: flex; flex-direction: column; gap: 0.75rem; }
+  .city-services__list li { display: flex; align-items: flex-start; gap: 0.75rem; color: var(--color-text); line-height: 1.5; font-size: 0.975rem; }
+  .city-services__list li::before { content: '✓'; color: var(--color-accent); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+  .city-services__list a { color: var(--color-primary); font-weight: 600; }
+  .city-services__list a:hover { color: var(--color-accent); }
+  .city-services__trust { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 2rem; }
+  .city-services__trust span { background: var(--color-neutral-50); border: 1px solid var(--color-neutral-200); padding: 0.35rem 0.875rem; border-radius: 4px; font-size: 0.8rem; font-weight: 600; color: var(--color-primary); }
+  .city-services__reasons { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0.75rem; }
+  .city-services__reasons li { display: flex; align-items: flex-start; gap: 0.75rem; color: var(--color-text-muted); font-size: 0.9rem; line-height: 1.6; }
+  .city-services__reasons li::before { content: '→'; color: var(--color-accent); font-weight: 700; flex-shrink: 0; }
+
+  @media (max-width: 900px) { .city-services__inner { grid-template-columns: 1fr; } }
+</style>
+
+<script type="application/ld+json">
+  {JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.dixonpaintingco.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Service Areas", "item": "https://www.dixonpaintingco.com/service-areas" },
+      { "@type": "ListItem", "position": 3, "name": "Vacaville", "item": "https://www.dixonpaintingco.com/service-areas/vacaville" }
+    ]
+  })}
+</script>

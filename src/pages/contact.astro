@@ -1,0 +1,104 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import LeadCaptureForm from '../components/LeadCaptureForm.astro';
+---
+
+<BaseLayout
+  title="Contact Us | Free Painting Estimate — Dixon Painting Co."
+  description="Get your free painting estimate from Dixon Painting Co. in Dixon, CA. Call (916) 612-2126 or fill out our online form. We serve Dixon + 20 miles."
+>
+  <section class="contact-hero">
+    <div class="container">
+      <h1 class="contact-hero__headline">Get Your Free Painting Estimate — No Pressure, No Obligation</h1>
+      <p class="contact-hero__sub">Fill out the form or call <a href="tel:+19166122126" aria-label="Call Dixon Painting Co. at (916) 612-2126">(916) 612-2126</a> — we'll get back to you the same day.</p>
+      <p class="contact-hero__body">Whether you're ready to book or just getting started, we're happy to talk through your project and give you a clear, honest estimate at no cost. We serve Dixon, CA and all cities within 20 miles.</p>
+    </div>
+  </section>
+
+  <section class="contact-main">
+    <div class="container contact-main__inner">
+      <!-- Form -->
+      <div class="contact-form-col">
+        <LeadCaptureForm
+          headingText="Send Us Your Project Details"
+          showHeading={true}
+          formId="contact-page-estimate"
+        />
+      </div>
+
+      <!-- Contact Info -->
+      <div class="contact-info-col">
+        <h2 class="contact-info__heading">Prefer to Call?</h2>
+        <a
+          href="tel:+19166122126"
+          class="contact-info__phone"
+          aria-label="Call Dixon Painting Co. at (916) 612-2126"
+        >
+          (916) 612-2126
+        </a>
+        <p class="contact-info__note">We pick up. Leave a message if we miss you and we'll call back within a few hours.</p>
+
+        <div class="contact-info__divider"></div>
+
+        <h3 class="contact-info__subheading">Business Hours</h3>
+        <ul class="contact-info__hours" role="list">
+          <li><span>Monday – Friday</span><span>8:00 AM – 6:00 PM</span></li>
+          <li><span>Saturday</span><span>9:00 AM – 2:00 PM</span></li>
+          <li><span>Sunday</span><span>Closed</span></li>
+        </ul>
+
+        <div class="contact-info__divider"></div>
+
+        <h3 class="contact-info__subheading">Service Area</h3>
+        <p class="contact-info__area">
+          Dixon, Vacaville, Woodland, Fairfield, Davis, and all cities within 20 miles of Dixon, CA.
+        </p>
+
+        <div class="contact-info__trust">
+          <span>Licensed &amp; Insured</span>
+          <span>Free Estimates</span>
+          <span>Free Color Consultation</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Map -->
+  <section class="contact-map">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d50570.27!2d-121.8!3d38.45!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x809953ae9cef8c11%3A0x9c56af82c23e9eed!2sDixon%2C%20CA!5e0!3m2!1sen!2sus!4v1"
+      title="Dixon Painting Co. location — Dixon, CA"
+      loading="lazy"
+      allowfullscreen
+      referrerpolicy="no-referrer-when-downgrade"
+    ></iframe>
+  </section>
+</BaseLayout>
+
+<style>
+  .contact-hero { background: var(--color-primary); padding: 4rem 1.5rem 3rem; }
+  .contact-hero__headline { font-family: var(--font-display); font-size: clamp(1.75rem, 4vw, 2.75rem); color: #fff; margin-bottom: 1rem; max-width: 700px; }
+  .contact-hero__sub { font-size: 1.05rem; color: rgba(255,255,255,0.88); margin-bottom: 0.75rem; }
+  .contact-hero__sub a { color: var(--color-accent); font-weight: 700; text-decoration: none; }
+  .contact-hero__body { color: rgba(255,255,255,0.7); line-height: 1.65; max-width: 560px; }
+
+  .contact-main { padding: 5rem 1.5rem; background: #fff; }
+  .contact-main__inner { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+
+  .contact-info__heading { font-family: var(--font-display); font-size: 1.5rem; color: var(--color-primary); margin-bottom: 0.75rem; }
+  .contact-info__phone { display: block; color: var(--color-accent); font-weight: 700; font-size: 2rem; text-decoration: none; margin-bottom: 0.5rem; transition: color 0.15s; }
+  .contact-info__phone:hover { color: var(--color-accent-dark); }
+  .contact-info__note { color: var(--color-text-muted); font-size: 0.875rem; margin-bottom: 1.5rem; }
+  .contact-info__divider { border: none; border-top: 1px solid var(--color-neutral-200); margin: 1.5rem 0; }
+  .contact-info__subheading { font-family: var(--font-body); font-size: 0.875rem; font-weight: 700; color: var(--color-primary); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.75rem; }
+  .contact-info__hours { list-style: none; margin: 0 0 1.5rem; padding: 0; display: flex; flex-direction: column; gap: 0.4rem; }
+  .contact-info__hours li { display: flex; justify-content: space-between; font-size: 0.875rem; color: var(--color-text); border-bottom: 1px solid var(--color-neutral-200); padding-bottom: 0.4rem; }
+  .contact-info__area { font-size: 0.875rem; color: var(--color-text-muted); line-height: 1.65; }
+  .contact-info__trust { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.5rem; }
+  .contact-info__trust span { background: var(--color-neutral-50); border: 1px solid var(--color-neutral-200); padding: 0.35rem 0.875rem; border-radius: 4px; font-size: 0.8rem; font-weight: 600; color: var(--color-primary); }
+
+  .contact-map { height: 400px; }
+  .contact-map iframe { width: 100%; height: 100%; border: none; display: block; }
+
+  @media (max-width: 768px) { .contact-main__inner { grid-template-columns: 1fr; } }
+</style>

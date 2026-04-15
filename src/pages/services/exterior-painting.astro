@@ -1,0 +1,100 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Hero from '../../components/Hero.astro';
+import OfferBand from '../../components/OfferBand.astro';
+import LeadCaptureForm from '../../components/LeadCaptureForm.astro';
+---
+
+<BaseLayout
+  title="Exterior Painting in Dixon, CA | Dixon Painting Co."
+  description="Protect and beautify your home with expert exterior painting in Dixon, CA. Weather-resistant finishes, free estimates. Dixon Painting Co. — (916) 612-2126."
+>
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <div class="container">
+      <ol class="breadcrumb__list" role="list">
+        <li><a href="/">Home</a></li>
+        <li aria-hidden="true">›</li>
+        <li><a href="/services">Services</a></li>
+        <li aria-hidden="true">›</li>
+        <li aria-current="page">Exterior Painting</li>
+      </ol>
+    </div>
+  </nav>
+
+  <Hero
+    headline="Exterior Painting in Dixon, CA — Built to Handle California Weather"
+    subheadline="Protect your home's exterior with a finish that looks great and lasts for years."
+    body="California sun and seasonal heat can fade and crack exterior paint faster than you'd expect. Dixon Painting Co. uses premium exterior-grade paints and thorough surface prep to make sure your finish doesn't just look good on day one — it holds up through every season. We handle siding, trim, fascia, and garage doors, and we'll help you choose a color that stands out in the neighborhood for all the right reasons."
+    primaryCtaText="Get a Free Exterior Painting Estimate"
+    primaryCtaHref="/contact"
+    urgencyCtaText="Call (916) 612-2126"
+    urgencyCtaHref="tel:+19166122126"
+    imageSrc="/assets/images/service-exterior-painting.webp"
+    imageAlt="Exterior painting by Dixon Painting Co."
+    showForm={false}
+  />
+
+  <section class="service-detail">
+    <div class="container service-detail__inner">
+      <div class="service-detail__content">
+        <h2>What's Included in Our Exterior Painting Service</h2>
+        <ul class="service-detail__list">
+          <li>Power washing and surface preparation</li>
+          <li>Scraping and sanding loose or peeling paint</li>
+          <li>Caulking gaps around windows, doors, and trim</li>
+          <li>Premium exterior-grade primer on bare wood and repairs</li>
+          <li>2 finish coats with weather-resistant paint</li>
+          <li>Painting of siding, trim, fascia, soffits, and garage doors</li>
+          <li>Full cleanup — no paint drips, no debris left behind</li>
+        </ul>
+        <div class="service-detail__trust">
+          <span>Licensed &amp; Insured</span>
+          <span>Free Color Consultation</span>
+          <span>Free Estimate</span>
+        </div>
+        <p class="service-detail__gallery-link">
+          <a href="/gallery">See our exterior painting work →</a>
+        </p>
+      </div>
+      <div class="service-detail__cta">
+        <LeadCaptureForm headingText="Get a Free Exterior Estimate" formId="exterior-estimate" />
+      </div>
+    </div>
+  </section>
+
+  <OfferBand
+    headline="Free Color Consultation with Every Exterior Estimate"
+    subheadline="Not sure what color will work best with your home's style and neighborhood? We'll help you decide — for free."
+    primaryCtaText="Schedule My Free Estimate"
+  />
+
+  <script type="application/ld+json">
+    {JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.dixonpaintingco.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://www.dixonpaintingco.com/services" },
+        { "@type": "ListItem", "position": 3, "name": "Exterior Painting", "item": "https://www.dixonpaintingco.com/services/exterior-painting" }
+      ]
+    })}
+  </script>
+</BaseLayout>
+
+<style>
+  .breadcrumb { background: var(--color-neutral-50); border-bottom: 1px solid var(--color-neutral-200); padding: 0.75rem 1.5rem; }
+  .breadcrumb__list { display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center; list-style: none; margin: 0; padding: 0; font-size: 0.875rem; color: var(--color-text-muted); }
+  .breadcrumb__list a { color: var(--color-primary); text-decoration: none; }
+  .breadcrumb__list a:hover { color: var(--color-accent); }
+  .service-detail { padding: 5rem 1.5rem; background: #fff; }
+  .service-detail__inner { display: grid; grid-template-columns: 1fr 400px; gap: 4rem; align-items: start; }
+  .service-detail__content h2 { font-family: var(--font-display); font-size: clamp(1.5rem, 3vw, 2rem); color: var(--color-primary); margin-bottom: 1.5rem; }
+  .service-detail__list { list-style: none; margin: 0 0 2rem; padding: 0; display: flex; flex-direction: column; gap: 0.75rem; }
+  .service-detail__list li { display: flex; align-items: flex-start; gap: 0.75rem; color: var(--color-text); line-height: 1.5; font-size: 0.975rem; }
+  .service-detail__list li::before { content: '✓'; color: var(--color-accent); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+  .service-detail__trust { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 1.5rem; }
+  .service-detail__trust span { background: var(--color-neutral-50); border: 1px solid var(--color-neutral-200); padding: 0.35rem 0.875rem; border-radius: 4px; font-size: 0.8rem; font-weight: 600; color: var(--color-primary); }
+  .service-detail__gallery-link a { color: var(--color-accent); font-weight: 700; text-decoration: none; }
+  .service-detail__gallery-link a:hover { text-decoration: underline; }
+  @media (max-width: 900px) { .service-detail__inner { grid-template-columns: 1fr; } }
+</style>

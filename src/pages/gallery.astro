@@ -1,0 +1,119 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import LeadCaptureForm from '../components/LeadCaptureForm.astro';
+
+const galleryPairs = [
+  { before: '/assets/images/gallery-before-1.webp', after: '/assets/images/gallery-after-1.webp', label: 'Interior Room', beforeAlt: 'Interior room before professional painting', afterAlt: 'Interior room after professional painting by Dixon Painting Co.' },
+  { before: '/assets/images/gallery-before-2.webp', after: '/assets/images/gallery-after-2.webp', label: 'Home Exterior', beforeAlt: 'Home exterior before professional painting', afterAlt: 'Home exterior after professional painting by Dixon Painting Co.' },
+  { before: '/assets/images/gallery-before-3.webp', after: '/assets/images/gallery-after-3.webp', label: 'Kitchen Cabinets', beforeAlt: 'Kitchen cabinets before professional painting', afterAlt: 'Kitchen cabinets after professional painting by Dixon Painting Co.' },
+  { before: '/assets/images/gallery-before-4.webp', after: '/assets/images/gallery-after-4.webp', label: 'Commercial Space', beforeAlt: 'Commercial space before professional painting', afterAlt: 'Commercial space after professional painting by Dixon Painting Co.' },
+];
+---
+
+<BaseLayout
+  title="Our Work | Dixon Painting Co. — Painting Contractor Dixon, CA"
+  description="Browse before & after photos of interior, exterior, and cabinet painting projects completed by Dixon Painting Co. in Dixon, CA and surrounding areas."
+>
+  <!-- Page Header -->
+  <section class="gallery-header">
+    <div class="container">
+      <h1 class="gallery-header__headline">Our Work — Before &amp; After Projects by Dixon Painting Co.</h1>
+      <p class="gallery-header__sub">See the difference a professional paint job makes.</p>
+      <p class="gallery-header__body">Every project in our gallery was completed by our team in Dixon, CA and the surrounding area. Browse interior, exterior, and cabinet painting transformations — then imagine what we can do for your home or business.</p>
+      <div class="gallery-header__cta-group">
+        <a href="/contact" class="gallery-header__cta-primary">Like What You See? Get a Free Estimate</a>
+        <a href="tel:+19166122126" class="gallery-header__cta-phone" aria-label="Call Dixon Painting Co. at (916) 612-2126">Call (916) 612-2126</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery Grid -->
+  <section class="gallery-grid-section">
+    <div class="container">
+      <div class="gallery-grid">
+        {galleryPairs.map(pair => (
+          <div class="gallery-pair">
+            <div class="gallery-pair__label">{pair.label}</div>
+            <div class="gallery-pair__images">
+              <div class="gallery-pair__image">
+                <span class="gallery-pair__badge gallery-pair__badge--before">Before</span>
+                <img src={pair.before} alt={pair.beforeAlt} loading="lazy" width="800" height="600" />
+              </div>
+              <div class="gallery-pair__image">
+                <span class="gallery-pair__badge gallery-pair__badge--after">After</span>
+                <img src={pair.after} alt={pair.afterAlt} loading="lazy" width="800" height="600" />
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Bottom CTA -->
+  <section class="gallery-cta">
+    <div class="container gallery-cta__inner">
+      <div>
+        <h2 class="gallery-cta__heading">Ready to Transform Your Home?</h2>
+        <p class="gallery-cta__sub">Get a free estimate and free color consultation from Dixon Painting Co.</p>
+        <a href="tel:+19166122126" class="gallery-cta__phone" aria-label="Call Dixon Painting Co. at (916) 612-2126">(916) 612-2126</a>
+      </div>
+      <div>
+        <LeadCaptureForm headingText="Get Your Free Estimate" formId="gallery-estimate" />
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .gallery-header {
+    background: var(--color-primary);
+    padding: 5rem 1.5rem;
+    text-align: center;
+  }
+  .gallery-header__headline {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 4vw, 3rem);
+    color: #fff;
+    margin-bottom: 1rem;
+  }
+  .gallery-header__sub {
+    font-size: 1.15rem;
+    color: rgba(255,255,255,0.85);
+    margin-bottom: 1rem;
+  }
+  .gallery-header__body {
+    font-size: 0.975rem;
+    color: rgba(255,255,255,0.7);
+    max-width: 600px;
+    margin: 0 auto 2rem;
+    line-height: 1.65;
+  }
+  .gallery-header__cta-group { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; }
+  .gallery-header__cta-primary { background: var(--color-accent); color: #fff; padding: 1rem 2rem; border-radius: 4px; font-weight: 700; text-decoration: none; transition: background 0.15s; }
+  .gallery-header__cta-primary:hover { background: var(--color-accent-dark); }
+  .gallery-header__cta-phone { border: 2px solid rgba(255,255,255,0.5); color: #fff; padding: 1rem 2rem; border-radius: 4px; font-weight: 600; text-decoration: none; transition: border-color 0.15s; }
+  .gallery-header__cta-phone:hover { border-color: #fff; }
+
+  .gallery-grid-section { padding: 5rem 1.5rem; background: #fff; }
+  .gallery-grid { display: flex; flex-direction: column; gap: 4rem; }
+  .gallery-pair__label { font-family: var(--font-display); font-size: 1.25rem; font-weight: 700; color: var(--color-primary); margin-bottom: 1.25rem; }
+  .gallery-pair__images { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+  .gallery-pair__image { position: relative; border-radius: 8px; overflow: hidden; }
+  .gallery-pair__image img { width: 100%; height: 300px; object-fit: cover; display: block; }
+  .gallery-pair__badge { position: absolute; top: 0.75rem; left: 0.75rem; padding: 0.25rem 0.75rem; border-radius: 4px; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; }
+  .gallery-pair__badge--before { background: rgba(0,0,0,0.65); color: #fff; }
+  .gallery-pair__badge--after { background: var(--color-accent); color: #fff; }
+
+  .gallery-cta { background: var(--color-neutral-50); padding: 5rem 1.5rem; border-top: 1px solid var(--color-neutral-200); }
+  .gallery-cta__inner { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+  .gallery-cta__heading { font-family: var(--font-display); font-size: clamp(1.5rem, 3vw, 2rem); color: var(--color-primary); margin-bottom: 0.75rem; }
+  .gallery-cta__sub { color: var(--color-text-muted); margin-bottom: 1.25rem; line-height: 1.65; }
+  .gallery-cta__phone { color: var(--color-accent); font-weight: 700; font-size: 1.125rem; text-decoration: none; }
+  .gallery-cta__phone:hover { text-decoration: underline; }
+
+  @media (max-width: 640px) {
+    .gallery-pair__images { grid-template-columns: 1fr; }
+    .gallery-cta__inner { grid-template-columns: 1fr; gap: 2rem; }
+  }
+</style>
